@@ -1,0 +1,511 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    font-size: 12px;
+}
+
+main {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 0px;
+    border-radius: 0px;
+    box-shadow: 0px 0px 7px 7px rgb(0 0 0 / 10%);
+}
+
+label {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* Tamanho de fonte forçado para os campos de formulário */
+input,
+select,
+textarea {
+    font-size: 11px !important;
+    margin-bottom: 15px;
+}
+
+input[type="file"] {
+    border: 1px solid #ced4da;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 8px !important;
+}
+
+/* Ajuste para os campos ficarem lado a lado a partir de 220px */
+@media (min-width: 220px) {
+    .col-220 {
+        display: inline-block;
+        width: 32%;
+        /* Alinhamento para três colunas lado a lado */
+        margin-right: 1%;
+        /* Espaçamento entre os campos */
+    }
+
+    .rede {
+        display: inline-block;
+        width: 45%;
+        /* Alinhamento ajustado para usar mais da tela */
+    }
+
+    .row.justify-content-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* Estilo dos menus dropdown */
+.dropdown-menu {
+    display: none;
+    /* Oculta o menu por padrão */
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+    /* Define uma largura mínima para o menu */
+    max-width: 100%;
+    /* Garante que o menu não ultrapasse a largura da tela */
+    max-height: 250px;
+    /* Aumentado para mostrar mais opções */
+    overflow-y: auto;
+    /* Adiciona rolagem vertical se necessário */
+    overflow-x: hidden;
+    /* Evita rolagem horizontal */
+    z-index: 1000;
+    /* Garante que o menu fique acima de outros elementos */
+    padding: 5px 0;
+}
+
+/* Exibe o menu quando ativo */
+.dropdown-menu.show {
+    display: block;
+}
+
+/* Estilos para o botão do dropdown */
+.dropdown-toggle {
+    padding: 8px 12px;  /* Aumentado o padding */
+    font-size: 12px !important;  /* Aumentado o tamanho da fonte */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  /* Alterado para espaçar o texto e o ícone */
+    width: 100%;
+    text-align: left;  /* Alinhamento à esquerda para melhor legibilidade */
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    background-color: #fff;
+    white-space: normal;  /* Permite quebra de linha se necessário */
+    min-height: 38px;  /* Altura mínima para acomodar o texto */
+}
+
+/* Ajustes para itens do menu dropdown */
+.dropdown-item, .dropdown-item-rede {
+    display: block;
+    padding: 8px 15px;  /* Aumentado padding para maior área clicável */
+    font-size: 12px !important;  /* Aumentado o tamanho da fonte */
+    text-align: left;  /* Alinhamento à esquerda para melhor legibilidade */
+    white-space: normal;  /* Permite quebra de linha se necessário */
+    width: 100%;
+    clear: both;
+}
+
+.dropdown-item:hover, .dropdown-item-rede:hover {
+    background-color: #f8f9fa;
+    text-decoration: none;
+}
+
+/* Ajustes específicos para dispositivos móveis */
+@media (max-width: 220px) {
+    form {
+        padding: 15px;
+    }
+
+    input,
+    select,
+    textarea {
+        font-size: 8px !important;
+    }
+
+    .col-220 {
+        display: block;
+        width: 100%;
+    }
+
+    .dropdown-toggle {
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        width: 100%;
+    }
+}
+
+/* Estilos gerais para centralização e largura dos dropdowns */
+.container2-dropdown {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    /* Espaçamento entre os dropdowns */
+    width: 100%;
+    /* Faz o container ocupar toda a largura */
+}
+
+.container2-dropdown .dropdown {
+    position: relative;
+    /* Necessário para o posicionamento absoluto dos menus */
+    display: inline-block;
+    /* Faz com que o dropdown ocupe apenas o espaço necessário */
+    width: 100%;
+    /* Cada dropdown ocupará toda a largura disponível */
+    margin-bottom: 10px;
+}
+
+/* O menu dropdown ocupará toda a largura disponível */
+.dropdown-menu {
+    width: 100%;
+}
+
+/* Ajustes específicos para dispositivos móveis */
+@media (max-width: 768px) {
+    .container2-dropdown {
+        flex-direction: column;
+        /* Alinha os dropdowns verticalmente em telas menores */
+        align-items: center;
+        /* Garante que os dropdowns estejam centralizados */
+        width: 100%;
+        /* O container ocupará toda a largura */
+    }
+
+    .container2-dropdown .dropdown {
+        width: 100%;
+        /* Garante que cada dropdown ocupe a largura total disponível em dispositivos móveis */
+        text-align: center;
+        /* Centraliza o texto dos dropdowns */
+    }
+
+    /* Estilos gerais para os dropdowns */
+    .container2-dropdown .dropdown-toggle {
+        font-size: 12px !important;
+        padding: 8px 10px;
+    }
+    
+    .dropdown-menu a, .dropdown-item, .dropdown-item-rede {
+        font-size: 12px !important;
+    }
+}
+
+/* Limitar a largura do botão de dropdown e garantir que ele ocupe o espaço disponível */
+.container2-dropdown .dropdown-toggle {
+    max-width: 100%;
+    /* Garante que o botão não ultrapasse o container */
+    width: 100%;
+    /* Ajusta a largura para ocupar todo o espaço disponível */
+    white-space: normal;
+    /* Permite que o texto quebre em várias linhas se necessário */
+}
+
+/* O menu dropdown ocupará toda a largura disponível dentro do container */
+.container2-dropdown .dropdown-menu {
+    max-width: 100%;
+    /* Garante que o menu não ultrapasse o container */
+    width: 100%;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 8px 15px;  /* Consistente com .dropdown-item */
+    font-size: 12px !important;  /* Aumentado para 12px */
+    text-align: left;
+}
+
+.input-group-text {
+    width: 50px;
+    position: fixed;
+    left: 10px;
+    top: 50px;
+    z-index: 1000;
+}
+
+.centralizar {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.oculto {
+    display: none;
+}
+
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+}
+
+#loading .spinner-border {
+    width: 3rem;
+    height: 3rem;
+    border-width: .3em;
+}
+
+#loading p {
+    margin-top: 1rem;
+}
+
+.btn-secondary {
+    color: #000000;
+    background-color: #ffffff;
+    border-color: #2d363d;
+}
+
+/* Estilo para as seções de fotos e datas */
+.quadrado {
+    border: 2px solid #ced4da;
+    padding: 15px;
+    margin-bottom: -28px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.datas-section {
+    margin-top: 20px; /* Ajuste o valor conforme necessário */
+}
+
+/* Diferenciar as seções de fotos e datas com cores diferentes */
+.fotos-section {
+    border-color: #ffffff;
+}
+
+.datas-section {
+    border-color: #ffffff;
+}
+
+/* Ajustes de margem para o conteúdo interno */
+.quadrado .form-group {
+    margin-bottom: 10px;
+}
+
+.container-quadrado {
+    border: 2px solid #ffffff;
+    padding: 0px;
+    border-radius: 0px;
+    background-color: #f9f9f9;
+}
+
+.container1,
+.container2,
+.container3 {
+    margin-bottom: 15px;
+}
+
+/* Ajuste do conteúdo principal para não ser coberto pelo navbar */
+main {
+    margin-top: 80px;
+    /* Ajuste o valor dependendo da altura do seu navbar */
+}
+
+/* Responsividade geral para os itens de formatação */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 10px;
+    }
+}
+
+#loading .spinner-border {
+    width: 3rem;
+    height: 3rem;
+    border-width: .3em;
+}
+
+#loading p {
+    margin-top: 1rem;
+}
+
+#adicionar-data {
+    padding: -0.7rem 0.75rem; /* Ajusta o padding para controlar o tamanho */
+    font-size: 0.875rem; /* Ajusta o tamanho da fonte */
+    display: block; /* necessário para o mx-auto funcionar */
+    margin: 10px auto; /* Centraliza horizontalmente e adiciona margem vertical */
+}
+
+.fotos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    justify-items: center;
+}
+
+.foto-item {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #ccc;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.foto-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+.foto-input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.foto-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.foto-lixeira {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: red;
+    cursor: pointer;
+    display: none; /* Inicialmente oculto */
+}
+
+.invalid-feedback {
+    display: none; /* Esconde as mensagens de erro por padrão */
+}
+
+.was-validated :invalid~.invalid-feedback,
+.was-validated .is-invalid~.invalid-feedback {
+    display: block; /* Exibe as mensagens de erro quando o formulário é invalidado */
+}
+
+
+/* Classe para os campos lado a lado */
+.campos-lado-a-lado {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 20px !important; /* Espaçamento entre os campos */
+}
+
+.campo-metade {
+    width: 45% !important; /* Um pouco menos que 50% para acomodar o gap */
+}
+
+/* Responsividade para os campos lado a lado */
+@media (max-width: 768px) {
+    .campo-metade {
+        width: 100% !important; /* Em telas menores, ocupam a largura toda */
+        margin-bottom: 15px !important;
+    }
+}
+
+/* Estilo para o container de datas lado a lado */
+.datas-container-flex {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+}
+
+/* Classe para cada data individual */
+.data-item {
+    width: 48% !important;
+    margin-bottom: 10px !important;
+}
+
+.fotos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.foto-item {
+    position: relative;
+}
+
+.foto-wrapper {
+    position: relative;
+    cursor: pointer;
+    height: 120px;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.foto-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.foto-placeholder i {
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.foto-input {
+    display: none;
+}
+
+.foto-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.foto-lixeira {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: white;
+    background: red;
+    padding: 5px;
+    border-radius: 50%;
+    z-index: 10;
+    display: none;
+}
+
+.foto-container:hover .foto-lixeira {
+    display: block;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Planilha Excel</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Planilha Excel</h1>
+    <table id="excel-table">
+        <thead>
+            <tr>
+                <th>Cargo</th>
+                <th>Nome</th>
+                <th>Modalidade</th>
+                <th>Salario</th>
+                <th>CPF</th>
+                <th>RG</th>
+                <th>Endereço</th>
+                <th>Bairro</th>
+                <th>Cidade</th>
+                <th>CEP</th>
+                <th>Banco</th>
+                <th>PIX</th>
+                <th>Data Pagamento</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Linhas da tabela serão adicionadas dinamicamente aqui -->
+        </tbody>
+    </table>
+    <button id="add-row">Adicionar Linha</button>
+    <button id="save-data">Salvar Dados</button>
+
+    <script>
+        // Função para adicionar uma nova linha à tabela
+        function addRow() {
+            var newRow = `
+                <tr>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+            `;
+            $('#excel-table tbody').append(newRow);
+        }
+
+        // Função para salvar os dados no servidor Flask
+        function saveData() {
+            var data = [];
+
+            // Ler os dados da tabela e criar um array com eles
+            $('#excel-table tbody tr').each(function () {
+                var row = [];
+                $(this).find('td').each(function () {
+                    row.push($(this).text());
+                });
+                data.push(row);
+            });
+
+            // Enviar os dados para o servidor Flask via AJAX
+            $.ajax({
+                url: '/salvar_dados',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                success: function (response) {
+                    alert('Dados salvos com sucesso!');
+                },
+                error: function () {
+                    alert('Ocorreu um erro ao salvar os dados.');
+                }
+            });
+        }
+
+        // Evento para adicionar uma nova linha quando o botão for clicado
+        $('#add-row').click(function () {
+            addRow();
+        });
+
+        // Evento para salvar os dados quando o botão for clicado
+        $('#save-data').click(function () {
+            saveData();
+        });
+
+        // Adicionar uma linha inicial à tabela
+        addRow();
+    </script>     
+</body>
+</html>

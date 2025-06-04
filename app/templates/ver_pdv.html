@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar PDVs</title>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../static/css/ver_pdv.css">
+    <style>
+        /* Estilo para criar o espaço abaixo do navbar */
+        body {
+            padding-top: 180px; /* Ajuste esse valor conforme a altura do seu navbar */
+        }
+
+        .navbar {
+            /* Certifique-se de que o navbar tenha uma posição fixa */
+            position: fixed; /* Ou sticky, dependendo do seu design */
+            top: 0;
+            width: 100%;
+            z-index: 1030; /* Garante que o navbar fique acima do conteúdo */
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container-fluid">
+        <h1 class="mb-4 text-center" style="display: none;">Visualizar PDVs</h1>
+        <div class="table-responsive">
+            <table class="table table-bordered table-sm" id="pdv-table">
+                <thead>
+                    <tr>
+                        <th>Marca</th>
+                        <th>SKU</th>
+                        <th>Preço</th>
+                        <th>Data da visita</th>
+                        <th class="d-none">ID</th>
+                        <th>Promotor</th>
+                        <th>Rede</th>
+                        <th>Loja</th>
+                        <th>GPS</th>
+                        <th class="d-none">Mensagem do dia</th>
+                        <th>Unidades em PDV</th>
+                        <th>Caixas em estoque</th>
+                        <th>Validade</th>
+                        <th>Fotos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for pdv in pdvs %}
+                    <tr>
+                        <td>{{ pdv.cliente }}</td>
+                        <td class="sku" data-bs-toggle="tooltip" title="{{ pdv.sku }}">{{ pdv.sku }}</td>
+                        <td>
+                            {% if pdv.preco is not none %}
+                            {{ 'R${:.2f}'.format(pdv.preco) }}
+                            {% else %}
+                            R$0.00
+                            {% endif %}
+                        </td>
+                        <td>{{ pdv.data_de_envio.strftime('%d/%m/%Y') if pdv.data_de_envio else 'Sem data' }}</td>
+                        <td class="d-none">{{ pdv.id }}</td>
+                        <td>{{ pdv.promotor }}</td>
+                        <td>{{ pdv.redes }}</td>
+                        <td>{{ pdv.loja }}</td>
+                        <td>
+                            {% if pdv.local %}
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#enderecoModal{{ pdv.id }}">Ver Local</button>
+                            <div class="modal fade" id="enderecoModal{{ pdv.id }}" tabindex="-1"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Endereço</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            {{ pdv.local }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </td>
+                        <td class="d-none">{{ pdv.mensagem_dia }}</td>
+                        <td>{{ pdv.quantidade_pdv }}</td>
+                        <td>{{ pdv.quantidade_estoque }}</td>
+                        <td>
+                            <button class="btn-vencimento" data-id="{{ pdv.id }}">Datas de vencimento</button>
+                            <ul id="vencimento-list-{{ pdv.id }}">
+                                {% for vencimento in pdv.vencimentos %}
+                                <li class="vencimento-item" data-vencimento="{{ vencimento }}">
+                                    {{ vencimento.strftime('%d/%m/%Y') }}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary verFotos-btn" data-pdv-id="{{ pdv.id }}">Ver Fotos</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal para exibir foto em tamanho maior -->
+    <div class="modal fade" id="modal-photo" tabindex="-1" aria-labelledby="modal-photo-label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-photo-label">Fotos do PDV</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="modal-carousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner" id="carouselImages">
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#modal-carousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#modal-carousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>    
+    <script src="../static/js/ver_pdv.js"></script>                       
+</body>
+</html>

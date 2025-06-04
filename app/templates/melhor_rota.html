@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Rotas</title>
+</head>
+<body>
+    <h1>Calculadora de Rotas</h1>
+
+    <form id="rotaForm">
+        <label for="origem">Origem:</label>
+        <input type="text" id="origem" name="origem" required>
+
+        <label for="destinos">Destinos (separados por vírgula):</label>
+        <textarea id="destinos" name="destinos" rows="4" required></textarea>
+
+        <button type="button" onclick="calcularRota()">Calcular Rota</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+        function calcularRota() {
+            var origem = document.getElementById('origem').value;
+            var destinos = document.getElementById('destinos').value.split(',');
+
+            // Chamada à função Python que calcula a rota
+            fetch('/calcular_rota', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ origem: origem, destinos: destinos }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('resultado').innerHTML = JSON.stringify(data, null, 2);
+            })
+            .catch(error => {
+                console.error('Erro ao calcular a rota:', error);
+            });
+        }
+    </script>
+</body>
+</html>

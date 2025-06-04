@@ -1,0 +1,28 @@
+# Dependências principais
+Flask==2.3.3
+Flask-SQLAlchemy==3.1.1
+SQLAlchemy==2.0.23
+Werkzeug==2.3.7
+Pillow==10.1.0
+mysql-connector-python==8.2.0
+python-dotenv==1.0.0
+
+# Utilitários
+requests==2.31.0
+urllib3==2.0.7
+openrouteservice==2.3.3
+pathlib==1.0.1
+
+# Segurança
+itsdangerous==2.1.2
+bcrypt==4.0.1  # Recomendado para a futura implementação de hash de senhas
+
+# Extensões opcionais do Flask
+Flask-Login==0.6.2  # Para uma futura implementação de gestão de sessões mais robusta
+Flask-WTF==1.2.1    # Para formulários com validação
+Flask-Migrate==4.0.5  # Para migrações do banco de dados
+
+# Ferramentas de desenvolvimento
+pytest==7.4.3
+black==23.10.1
+flake8==6.1.0

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserir Endereços</title>
+</head>
+<body>
+    <h1>Inserir Endereços</h1>
+    <form action="{{ url_for('inserir_enderecos') }}" method="post">
+        {% for i in range(20) %}
+            <label for="endereco{{ i+1 }}">Endereço {{ i+1 }}:</label>
+            <input type="text" name="endereco{{ i+1 }}" required>
+            <br>
+        {% endfor %}
+        <button type="submit">Calcular Melhor Rota</button>
+    </form>
+</body>
+</html>

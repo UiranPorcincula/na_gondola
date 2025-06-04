@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redes de Clientes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pdv_estoque.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            width: 600px;
+        }
+        .clientes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .clientes img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .clientes img:hover {
+            transform: scale(1.05);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Clique na marca</h1>
+        
+        {% if clientes %}
+            <div class="clientes">
+                {% for cliente in clientes %}
+                    <a href="{{ url_for('sku.sku_route', cliente_id=cliente.id) }}">
+                        <img src="{{ url_for('static', filename='img/' + cliente.foto) }}" alt="{{ cliente.nome }}">
+                    </a>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>Nenhum cliente associado.</p>
+        {% endif %}
+    </div>
+
+    <!-- JavaScript para capturar o 'alt' da imagem clicada e armazenar no localStorage -->
+    <script>
+    document.querySelectorAll('.clientes img').forEach(img => {
+        img.addEventListener('click', function(event) {
+            event.preventDefault(); // Evita o redirecionamento imediato
+
+            const clienteNome = this.alt; // Obtém o valor do atributo alt da imagem
+            const clienteId = this.parentElement.getAttribute('href').split('=')[1]; // Obtém o ID do cliente da URL
+
+            console.log(clienteNome); // Exibe o nome do cliente no console para depuração
+
+            // Salva o nome e o ID do cliente no localStorage
+            localStorage.setItem('selectedClienteName', clienteNome);
+            localStorage.setItem('selectedClienteId', clienteId);
+
+            // Redireciona para a página sku.html com o ID do cliente
+            window.location.href = '{{ url_for("sku.sku_route") }}?cliente_id=' + clienteId;
+        });
+    });
+    </script>
+</body>
+</html>

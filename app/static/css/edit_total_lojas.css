@@ -1,0 +1,160 @@
+/* Estilos para a página de edição de loja */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+form input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.form-container h2 {
+    margin-top: 0;
+}
+
+/* Estilos para filtros */
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filter-container label {
+    font-weight: bold;
+}
+
+.filter-container select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Estilos para a tabela */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Estilos para os botões */
+.btn {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #a9adad; /* Branco */
+    color: #000000; /* Texto preto */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Adicionado */
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para os botões de dia de visita */
+#dia_visita_buttons button {
+    padding: 10px 20px;
+    margin-right: 5px; /* Adicionado espaçamento entre os botões */
+    background-color: #a9adad; /* Branco */
+    color: #000000; /* Texto preto */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#dia_visita_buttons button.btn-selected {
+    background-color: #1cb1df; /* Azul */
+    color: #ffffff; /* Texto branco */
+}
+
+
+

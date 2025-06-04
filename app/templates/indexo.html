@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melhor Rota</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <h1>Calcular Melhor Rota</h1>
+    
+    <form id="rotaForm">
+        <label for="origem">Origem:</label>
+        <input type="text" id="origem" name="origem" required>
+        
+        <label for="destinos">Destinos (separados por vírgula):</label>
+        <textarea id="destinos" name="destinos" required></textarea>
+        
+        <button type="button" onclick="calcularRota()">Calcular Rota</button>
+    </form>
+
+    <div id="resultadoRota"></div>
+
+    <script>
+        function calcularRota() {
+            var origem = document.getElementById('origem').value;
+            var destinos = document.getElementById('destinos').value.split(',');
+
+            $.ajax({
+                url: '/calcular_rota',
+                type: 'POST',
+                contentType: 'application/json;charset=UTF-8',
+                data: JSON.stringify({ origem: origem, destinos: destinos }),
+                success: function (data) {
+                    exibirResultadoRota(data);
+                },
+                error: function (error) {
+                    console.error('Erro ao calcular a rota:', error);
+                }
+            });
+        }
+
+        function exibirResultadoRota(rota) {
+            var resultadoDiv = document.getElementById('resultadoRota');
+            resultadoDiv.innerHTML = '<h2>Melhor Rota:</h2>';
+            
+            // Adicione aqui o código para exibir o resultado da rota no formato desejado
+            // Exemplo básico: apenas exibindo as coordenadas da rota
+            resultadoDiv.innerHTML += '<p>' + JSON.stringify(rota) + '</p>';
+        }
+    </script>
+</body>
+</html>

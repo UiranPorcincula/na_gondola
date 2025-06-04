@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pesquisa de Lojas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>    
+</head>
+<body>    
+    {% include 'navbar.html' %}
+    <div class="container-fluid mt-3">
+        <div class="mb-3">
+            <h2>Pesquisa de Lojas</h2>
+    <form id="search-form">
+        <input type="text" name="pesquisa" id="pesquisa" placeholder="Digite sua pesquisa" autocomplete="off">
+    </form>
+    <div id="buscar-resultados"></div>    
+    <script>
+        $(document).ready(function() {
+            $('#search-form').on('submit', function(event) {
+                event.preventDefault(); // Evita o envio tradicional do formulário
+                var pesquisa = $('#pesquisa').val();
+                if (pesquisa.trim() === '') {
+                    $('#buscar-resultados').html(''); // Limpa a div de resultados
+                } else {
+                    $.ajax({
+                        url: '/search',
+                        type: 'POST',
+                        data: { pesquisa: pesquisa },
+                        success: function(response) {
+                            $('#buscar-resultados').html(response);
+                        }
+                    });
+                }
+            });
+            $('#pesquisa').on('input', function() {
+                var pesquisa = $(this).val();
+                if (pesquisa.trim() === '') {
+                    $('#buscar-resultados').html(''); // Limpa a div de resultados
+                } else {
+                    $.ajax({
+                        url: '/search',
+                        type: 'POST',
+                        data: { pesquisa: pesquisa },
+                        success: function(response) {
+                            $('#buscar-resultados').html(response);
+                        }
+                    });
+                }
+            });
+        });
+    </script>           
+</body>
+</html>
