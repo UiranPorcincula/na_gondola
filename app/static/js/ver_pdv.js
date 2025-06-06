@@ -28,17 +28,23 @@ $(document).ready(function () {
             url: '/get_photos/' + pdvId,
             method: 'GET',
             success: function (response) {
-                if (response && Array.isArray(response)) {
+                if (response && Array.isArray(response) && response.length > 0) {
                     response.forEach(function (foto, index) {
                         var activeClass = index === 0 ? 'active' : '';
-                        var imageHtml = `<div class="carousel-item ${activeClass}">
-                                            <img src="${foto}" class="d-block w-100" alt="Foto">
-                                        </div>`;
+                        var descricao = foto.tipo === "antes" ? "Antes" : (foto.tipo === "depois" ? "Depois" : "");
+                        var imageHtml = `
+                        <div class="carousel-item ${activeClass}">
+                            <img src="${foto.url}" class="d-block w-100" alt="Foto">
+                            <div class="carousel-caption d-block">
+                                <span style="background: rgba(0,0,0,0.6); padding: 3px 10px; border-radius: 6px;">${descricao}</span>
+                            </div>
+                        </div>`;
                         carouselInner.append(imageHtml);
                     });
                     $('#modal-photo').modal('show');
                 } else {
-                    console.error("Fotos não encontradas ou resposta inesperada");
+                    carouselInner.append('<div class="text-center">Nenhuma foto encontrada.</div>');
+                    $('#modal-photo').modal('show');
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -119,7 +125,7 @@ $(document).ready(function () {
     });
 
     // Função para alternar a exibição dos vencimentos
-    window.toggleVencimentos = function(pdvId) {
+    window.toggleVencimentos = function (pdvId) {
         var vencimentoDiv = document.getElementById('vencimentos-' + pdvId);
         if (vencimentoDiv.style.display === 'none') {
             vencimentoDiv.style.display = 'block';
@@ -188,9 +194,9 @@ $(document).ready(function () {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const itemsToHide = ["Home", "Lojas", "Promotores", "Roteiros", "Contatos", "PDV Estoque", "Ver PDV"];
-    
+
     document.querySelectorAll('.navbar-nav .nav-item').forEach(item => {
         if (itemsToHide.includes(item.textContent.trim())) {
             item.style.display = 'none';

@@ -1,29 +1,56 @@
-from flask import Blueprint, request, render_template, flash, session, redirect, url_for, jsonify, send_file
+from flask import Blueprint, request, render_template, flash, session, redirect, url_for, jsonify, send_file, Response
 from app import db
-from app.models.pdv import PDV
-from app.utils.image_utils import convert_to_base64
-from PIL import Image
-from io import BytesIO
-import base64
+from app.models.pdv import PDV, PDVFoto
 from datetime import datetime
-import io
+from io import BytesIO
 
 pdv_bp = Blueprint('pdv', __name__)
 
-# Função para validar e converter datas no formato ISO ou brasileiro
 def format_date(date_str):
     if not date_str:
         return None
     try:
-        # Tenta converter a data no formato ISO (yyyy-mm-dd)
         return datetime.strptime(date_str, '%Y-%m-%d').date()
     except ValueError:
         try:
-            # Tenta converter a data no formato brasileiro (dd/mm/yyyy)
             return datetime.strptime(date_str, '%d/%m/%Y').date()
         except ValueError:
-            # Log ou tratamento de erro, se necessário
             return None
+
+def convert_preco(preco_str):
+    if preco_str:
+        try:
+            return float(preco_str.replace('R$', '').replace('.', '').replace(',', '.').strip())
+        except ValueError:
+            return None
+    return None
+
+@pdv_bp.route('/foto/<int:foto_id>')
+def foto(foto_id):
+    foto = PDVFoto.query.get_or_404(foto_id)
+    return Response(foto.foto, mimetype='image/jpeg')
+
+@pdv_bp.route('/imagem_base64_nova/<int:foto_id>')
+def imagem_base64_nova(foto_id):
+    foto = PDVFoto.query.get_or_404(foto_id)
+    if foto.foto:
+        return send_file(BytesIO(foto.foto), mimetype='image/jpeg')
+    return "Imagem não encontrada", 404
+
+@pdv_bp.route('/get_photos/<int:pdv_id>')
+def get_photos(pdv_id):
+    fotos = PDVFoto.query.filter_by(pdv_id=pdv_id).all()
+    if fotos:
+        photo_infos = [
+            {
+                "url": url_for('pdv.imagem_base64_nova', foto_id=foto.id),
+                "tipo": foto.tipo.lower() if foto.tipo else ""
+            }
+            for foto in fotos
+        ]
+        return jsonify(photo_infos)
+    else:
+        return jsonify([])
 
 @pdv_bp.route('/submit', methods=['POST'])
 def submit():
@@ -39,33 +66,15 @@ def submit():
     preco = request.form.get('preco')
     sku = request.form.get('ProdutoSelecionado')
 
-    # Função para converter preço de string para float
-    def convert_preco(preco_str):
-        if preco_str:
-            try:
-                return float(preco_str.replace('R$', '').replace('.', '').replace(',', '.').strip())
-            except ValueError:
-                return None
-        return None
-
     preco = convert_preco(preco)
-
-    # Validar e converter as datas
     data_de_envio = format_date(data_de_envio)
-    vencimentos = [
-    format_date(request.form.get(f'vencimento{i}'))
-    for i in range(1, 6)
-    if request.form.get(f'vencimento{i}')
-]
 
-    # Fotos dinâmicas (convertendo para base64)
-    fotos = [
-        convert_to_base64(request.files.get(f'file{i}'))
+    vencimentos = [
+        format_date(request.form.get(f'vencimento{i}'))
         for i in range(1, 6)
-        if request.files.get(f'file{i}')
+        if request.form.get(f'vencimento{i}')
     ]
 
-    # Criar novo registro no banco de dados
     pdv = PDV(
         promotor=promotor,
         loja=loja,
@@ -83,14 +92,18 @@ def submit():
         vencimento3=vencimentos[2] if len(vencimentos) > 2 else None,
         vencimento4=vencimentos[3] if len(vencimentos) > 3 else None,
         vencimento5=vencimentos[4] if len(vencimentos) > 4 else None,
-        foto1=fotos[0] if len(fotos) > 0 else None,
-        foto2=fotos[1] if len(fotos) > 1 else None,
-        foto3=fotos[2] if len(fotos) > 2 else None,
-        foto4=fotos[3] if len(fotos) > 3 else None,
-        foto5=fotos[4] if len(fotos) > 4 else None,
     )
-
     db.session.add(pdv)
+    db.session.commit()
+
+    # Salva múltiplas fotos (até 20, cada uma com tipo)
+    fotos = request.files.getlist('file[]')
+    tipos = request.form.getlist('tipo_foto[]')
+    for file, tipo in zip(fotos, tipos):
+        if file and tipo in ['Antes', 'Depois']:
+            foto_blob = file.read()
+            pdv_foto = PDVFoto(pdv_id=pdv.id, tipo=tipo, foto=foto_blob)
+            db.session.add(pdv_foto)
     db.session.commit()
 
     flash('Dados salvos com sucesso!')
@@ -117,7 +130,6 @@ def handle_pdv_estoque():
             lojas_por_rede[rede] = []
         lojas_por_rede[rede].append(loja.loja)
 
-    # Adicionar a data atual ao contexto
     data_atual = datetime.utcnow().strftime('%d/%m/%Y')
 
     return render_template('pdv_estoque.html', lojas=lojas, lojas_por_rede=lojas_por_rede, data_atual=data_atual)
@@ -129,47 +141,6 @@ def ver_pdv():
     
     pdvs = PDV.query.all()
     return render_template('ver_pdv.html', pdvs=pdvs)
-
-@pdv_bp.route('/imagem_base64/<int:pdv_id>/<string:tipo>')
-def imagem_base64(pdv_id, tipo):
-    campos_imagem = ['foto1', 'foto2', 'foto3', 'foto4', 'foto5']
-    
-    if tipo not in campos_imagem:
-        return "Tipo de imagem inválido", 400
-    
-    pdv = PDV.query.get(pdv_id)
-    
-    if pdv:
-        imagem_base64 = getattr(pdv, tipo)
-        
-        if imagem_base64:
-            try:
-                imagem_bytes = base64.b64decode(imagem_base64)
-                with Image.open(BytesIO(imagem_bytes)) as img:
-                    img = img.convert("RGB")
-                    img_io = BytesIO()
-                    img.save(img_io, 'JPEG')
-                    img_io.seek(0)
-                    return send_file(img_io, mimetype='image/jpeg')
-            except Exception as e:
-                return f"Erro ao processar a imagem: {e}", 500
-        else:
-            return "Imagem não disponível", 404
-    else:
-        return "PDV não encontrado", 404
-
-@pdv_bp.route('/get_photos/<int:pdv_id>')
-def get_photos(pdv_id):
-    pdv = PDV.query.get(pdv_id)
-    if pdv:
-        photos = [getattr(pdv, f'foto{i}') for i in range(1, 6) if getattr(pdv, f'foto{i}')]
-        if photos:
-            photo_urls = [f"/imagem_base64/{pdv_id}/foto{i}" for i in range(1, 6) if getattr(pdv, f'foto{i}')]
-            return jsonify(photo_urls)
-        else:
-            return jsonify([])
-    else:
-        return jsonify([])
 
 @pdv_bp.route('/get_vencimentos', methods=['GET'])
 def get_vencimentos():

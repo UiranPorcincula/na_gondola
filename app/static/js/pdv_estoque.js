@@ -450,3 +450,109 @@ function apagarFoto(event, id) {
     input.value = "";
     placeholder.style.display = "flex";
 }
+
+//fotos
+
+const MAX_FOTOS = 20;
+let fotosData = []; // [{file, tipo, previewUrl, fileInput}]
+
+function renderFotoQuadrados() {
+    const grid = document.getElementById('fotos-grid');
+    grid.innerHTML = '';
+
+    fotosData.forEach((foto, idx) => {
+        const fotoDiv = document.createElement('div');
+        fotoDiv.className = 'foto-item';
+        fotoDiv.innerHTML = `
+            <div class="foto-wrapper">
+                <div class="foto-container">
+                    <img src="${foto.previewUrl}" class="foto-preview"/>
+                    <span class="foto-tipo">${foto.tipo}</span>
+                    <i class="fas fa-trash-alt foto-lixeira" onclick="removerFoto(${idx})"></i>
+                </div>
+            </div>
+        `;
+        fotoDiv.appendChild(foto.fileInput);
+        const inputTipo = document.createElement('input');
+        inputTipo.type = 'hidden';
+        inputTipo.name = 'tipo_foto[]';
+        inputTipo.value = foto.tipo;
+        fotoDiv.appendChild(inputTipo);
+        grid.appendChild(fotoDiv);
+    });
+
+    if (fotosData.length < MAX_FOTOS) {
+        const nextDiv = document.createElement('div');
+        nextDiv.className = 'foto-item';
+        nextDiv.innerHTML = `
+            <div class="foto-wrapper" onclick="adicionarNovaFoto()">
+                <div class="foto-placeholder">
+                    <i class="fas fa-camera"></i>
+                    <span>Adicionar foto</span>
+                </div>
+            </div>
+        `;
+        grid.appendChild(nextDiv);
+    }
+}
+
+function removerFoto(idx) {
+    fotosData.splice(idx, 1);
+    renderFotoQuadrados();
+}
+
+// ---- MODAL ANTES/DEPOIS LIVRE ----
+// Adapte para o seu modal Bootstrap
+
+function adicionarNovaFoto() {
+    if (fotosData.length >= MAX_FOTOS) {
+        alert('Limite máximo de 20 fotos atingido.');
+        return;
+    }
+    // Nunca bloqueie o botão "Depois"!
+    $('#btnDepois').prop('disabled', false);
+
+    // Mostra o modal
+    var tipoFotoModal = new bootstrap.Modal(document.getElementById('tipoFotoModal'));
+    tipoFotoModal.show();
+
+    $('#btnAntes').off('click').on('click', function () {
+        tipoFotoModal.hide();
+        escolherTipoFoto("Antes");
+    });
+    $('#btnDepois').off('click').on('click', function () {
+        tipoFotoModal.hide();
+        escolherTipoFoto("Depois");
+    });
+}
+
+function escolherTipoFoto(tipo) {
+    const inputFile = document.createElement('input');
+    inputFile.type = 'file';
+    inputFile.accept = 'image/*';
+    inputFile.name = 'file[]';
+    inputFile.style.display = 'none';
+    inputFile.onchange = function(e) {
+        if (e.target.files && e.target.files[0]) {
+            const file = e.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function(ev) {
+                fotosData.push({
+                    file: file,
+                    tipo: tipo,
+                    previewUrl: ev.target.result,
+                    fileInput: inputFile
+                });
+                renderFotoQuadrados();
+            };
+            reader.readAsDataURL(file);
+        }
+    };
+    inputFile.click();
+}
+
+// No submit
+document.getElementById('submit-form').addEventListener('submit', function(e) {
+    fotosData.forEach(foto => this.appendChild(foto.fileInput));
+});
+document.addEventListener('DOMContentLoaded', () => renderFotoQuadrados());

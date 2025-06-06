@@ -3,6 +3,7 @@ from app import db
 from app.models.notas import NotaFiscal
 from app.models.lojas import RedesLojas
 from PIL import Image
+from app.models.lojas import TotalLojas
 import io
 import zipfile  # Importando biblioteca para criar arquivos ZIP
 import tempfile  # Para criar arquivo temporário
@@ -16,10 +17,10 @@ def nota_fiscal_form():
     if not usuario:
         return redirect(url_for('auth.login'))
 
-    # Buscar pares (rede, loja) para o promotor logado
-    resultados = db.session.query(RedesLojas.rede, RedesLojas.loja).filter_by(promotor=usuario).all()
+    # Buscar pares (rede, loja) para o promotor logado na tabela total_lojas
+    resultados = db.session.query(TotalLojas.rede, TotalLojas.loja).filter_by(promotor=usuario).all()
 
-    redes = sorted(set([r.rede for r in resultados]))
+    redes = sorted(set([r.rede for r in resultados if r.rede]))
 
     # Monta dicionário com lojas agrupadas por rede
     lojas_por_rede = {}
@@ -105,7 +106,10 @@ def ver_nota(nota_id, pdf_index):
 
 @notas_bp.route('/lista_notas')
 def lista_notas():
-    notas = NotaFiscal.query.all()
+    usuario = session.get('username')
+    if not usuario:
+        return redirect(url_for('auth.login'))
+    notas = NotaFiscal.query.filter_by(usuario=usuario).all()
     return render_template('lista_notas.html', notas=notas)
 
 @notas_bp.route('/baixar_nota/<int:nota_id>')

@@ -2,6 +2,7 @@ from app import db
 from datetime import datetime
 
 class PDV(db.Model):
+    __tablename__ = 'PDV'
     id = db.Column(db.Integer, primary_key=True)
     promotor = db.Column(db.String(50), nullable=False)
     loja = db.Column(db.String(50), nullable=False)
@@ -13,17 +14,21 @@ class PDV(db.Model):
     vencimento3 = db.Column(db.Date)
     vencimento4 = db.Column(db.Date)
     vencimento5 = db.Column(db.Date)
-    foto1 = db.Column(db.String(500))
-    foto2 = db.Column(db.String(500))
-    foto3 = db.Column(db.String(500))
-    foto4 = db.Column(db.String(500))
-    foto5 = db.Column(db.String(500))
     cliente = db.Column(db.String(255))
     mensagem_dia = db.Column(db.String(255)) 
     redes = db.Column(db.String(255))
     data_de_envio = db.Column(db.Date)
     preco = db.Column(db.Float)
     sku = db.Column(db.String(100))
+    
+    
+class PDVFoto(db.Model):
+    __tablename__ = 'pdv_foto'
+    id = db.Column(db.Integer, primary_key=True)
+    pdv_id = db.Column(db.Integer, db.ForeignKey('PDV.id'), nullable=False)
+    tipo = db.Column(db.String(10), nullable=False)  # "Antes" ou "Depois"
+    foto = db.Column(db.LargeBinary(length=209715200))  # 200MB
+    pdv = db.relationship('PDV', backref=db.backref('fotos', lazy=True))
 
 class Cliente(db.Model):
     id = db.Column(db.Integer, primary_key=True)

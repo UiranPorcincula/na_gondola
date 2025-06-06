@@ -17,6 +17,7 @@ class Lojastotal(db.Model):
     endereco = db.Column(db.String(100), nullable=False)
     
 class TotalLojas(db.Model):
+    __tablename__ = 'total_lojas'
     id = db.Column(db.Integer, primary_key=True)
     promotor = db.Column(db.String(512), nullable=False)
     rede = db.Column(db.String(512), nullable=False)
