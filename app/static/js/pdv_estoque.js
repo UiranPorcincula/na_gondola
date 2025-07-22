@@ -456,6 +456,7 @@ function apagarFoto(event, id) {
 const MAX_FOTOS = 20;
 let fotosData = []; // [{file, tipo, previewUrl, fileInput}]
 
+// Atualize a função renderFotoQuadrados para garantir que o preview está com display:block
 function renderFotoQuadrados() {
     const grid = document.getElementById('fotos-grid');
     grid.innerHTML = '';
@@ -466,18 +467,20 @@ function renderFotoQuadrados() {
         fotoDiv.innerHTML = `
             <div class="foto-wrapper">
                 <div class="foto-container">
-                    <img src="${foto.previewUrl}" class="foto-preview"/>
+                    <img src="${foto.previewUrl}" class="foto-preview" style="display:block"/>
                     <span class="foto-tipo">${foto.tipo}</span>
                     <i class="fas fa-trash-alt foto-lixeira" onclick="removerFoto(${idx})"></i>
                 </div>
             </div>
         `;
         fotoDiv.appendChild(foto.fileInput);
+
         const inputTipo = document.createElement('input');
         inputTipo.type = 'hidden';
         inputTipo.name = 'tipo_foto[]';
         inputTipo.value = foto.tipo;
         fotoDiv.appendChild(inputTipo);
+
         grid.appendChild(fotoDiv);
     });
 
@@ -530,13 +533,18 @@ function escolherTipoFoto(tipo) {
     const inputFile = document.createElement('input');
     inputFile.type = 'file';
     inputFile.accept = 'image/*';
+    inputFile.capture = 'environment'; // Sugere câmera traseira (opcional)
     inputFile.name = 'file[]';
     inputFile.style.display = 'none';
-    inputFile.onchange = function(e) {
+
+    // ANTES de adicionar o listener, insira o input no DOM (fora da tela)
+    document.body.appendChild(inputFile);
+
+    inputFile.onchange = function (e) {
         if (e.target.files && e.target.files[0]) {
             const file = e.target.files[0];
             const reader = new FileReader();
-            reader.onload = function(ev) {
+            reader.onload = function (ev) {
                 fotosData.push({
                     file: file,
                     tipo: tipo,
@@ -544,6 +552,7 @@ function escolherTipoFoto(tipo) {
                     fileInput: inputFile
                 });
                 renderFotoQuadrados();
+                inputFile.remove(); // <- aqui remove o input invisível do DOM
             };
             reader.readAsDataURL(file);
         }
@@ -552,7 +561,7 @@ function escolherTipoFoto(tipo) {
 }
 
 // No submit
-document.getElementById('submit-form').addEventListener('submit', function(e) {
+document.getElementById('submit-form').addEventListener('submit', function (e) {
     fotosData.forEach(foto => this.appendChild(foto.fileInput));
 });
 document.addEventListener('DOMContentLoaded', () => renderFotoQuadrados());

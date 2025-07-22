@@ -509,3 +509,59 @@ main {
 .foto-container:hover .foto-lixeira {
     display: block;
 }
+
+/* ESTILO CAPTURA FOTO INICIO */
+
+/* Adicionar no final do arquivo */
+
+/* Estilos para inputs de arquivo em dispositivos móveis */
+input[type="file"] {
+    /* Resetar aparência padrão */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Melhorar a área de toque em dispositivos móveis */
+.foto-wrapper, .foto-placeholder {
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Garantir que os elementos sejam clicáveis em dispositivos touch */
+.foto-wrapper, .foto-placeholder, .foto-input {
+    touch-action: manipulation;
+}
+
+/* Ajustar tamanho mínimo para alvos touch */
+.foto-wrapper {
+    min-width: 44px;
+    min-height: 44px;
+}
+
+/* Feedback visual para touch */
+.foto-wrapper:active {
+    opacity: 0.8;
+}
+
+/* Melhorar visualização em telas de alta densidade */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .foto-preview {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* ESTILO CAPTURA FOTO FIM */
+
+/* Garante que o preview da foto apareça */
+.foto-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block !important; /* Força mostrar */
+    position: absolute;
+    top: 0;
+    left: 0;
+}

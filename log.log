@@ -7986,3 +7986,232 @@ werkzeug.routing.BuildError: Could not build url for endpoint 'total_edit' with 
 2025-06-03 22:08:09 - INFO -  * Restarting with stat
 2025-06-03 22:08:10 - WARNING -  * Debugger is active!
 2025-06-03 22:08:10 - INFO -  * Debugger PIN: 712-229-306
+2025-07-19 18:59:27 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-19 18:59:27 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-19 18:59:27 - INFO -  * Restarting with stat
+2025-07-19 18:59:28 - WARNING -  * Debugger is active!
+2025-07-19 18:59:28 - INFO -  * Debugger PIN: 551-291-385
+2025-07-19 19:11:46 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-19 19:11:46 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-19 19:11:46 - INFO -  * Restarting with stat
+2025-07-19 19:11:46 - WARNING -  * Debugger is active!
+2025-07-19 19:11:46 - INFO -  * Debugger PIN: 794-271-249
+2025-07-19 19:12:06 - INFO - 127.0.0.1 - - [19/Jul/2025 19:12:06] "GET / HTTP/1.1" 200 -
+2025-07-19 19:12:06 - INFO - 127.0.0.1 - - [19/Jul/2025 19:12:06] "GET /static/css/login.css HTTP/1.1" 200 -
+2025-07-19 19:12:06 - INFO - 127.0.0.1 - - [19/Jul/2025 19:12:06] "GET //static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-19 19:12:06 - INFO - 127.0.0.1 - - [19/Jul/2025 19:12:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-19 19:13:39 - INFO - 127.0.0.1 - - [19/Jul/2025 19:13:39] "GET / HTTP/1.1" 200 -
+2025-07-19 19:13:39 - INFO - 127.0.0.1 - - [19/Jul/2025 19:13:39] "GET /static/css/login.css HTTP/1.1" 200 -
+2025-07-19 19:13:39 - INFO - 127.0.0.1 - - [19/Jul/2025 19:13:39] "GET //static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-19 19:31:07 - DEBUG - Building SSL context
+2025-07-19 19:31:08 - DEBUG - Switching to SSL
+2025-07-19 19:31:08 - DEBUG - SSL has been enabled
+2025-07-19 19:31:08 - DEBUG - Starting authorization phase
+2025-07-19 19:31:08 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-07-19 19:31:08 - INFO - package: mysql.connector.plugins
+2025-07-19 19:31:08 - INFO - plugin_name: caching_sha2_password
+2025-07-19 19:31:08 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-07-19 19:31:08 - DEBUG - Server's response is an auth switch request
+2025-07-19 19:31:08 - DEBUG - Switching to strategy mysql_native_password
+2025-07-19 19:31:08 - INFO - package: mysql.connector.plugins
+2025-07-19 19:31:08 - INFO - plugin_name: mysql_native_password
+2025-07-19 19:31:08 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2025-07-19 19:31:08 - DEBUG - # request: b"_\x143m\x88\x84\x00([\xc7\xdc\x8d\xca\x91L'5VWl" size: 20
+2025-07-19 19:31:08 - DEBUG - # server response packet: b'\x07\x00\x00\x05\x00\x00\x00\x02\x00\x00\x00'
+2025-07-19 19:31:08 - DEBUG - mysql_native_password completed succesfully
+2025-07-19 19:31:08 - INFO - 127.0.0.1 - - [19/Jul/2025 19:31:08] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-07-19 19:31:08 - INFO - 127.0.0.1 - - [19/Jul/2025 19:31:08] "GET /redes HTTP/1.1" 200 -
+2025-07-19 19:31:08 - INFO - 127.0.0.1 - - [19/Jul/2025 19:31:08] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-19 19:31:08 - INFO - 127.0.0.1 - - [19/Jul/2025 19:31:08] "GET /static/img/FRUTAP.png HTTP/1.1" 200 -
+2025-07-19 19:31:09 - INFO - 127.0.0.1 - - [19/Jul/2025 19:31:09] "GET /sku?cliente_id=2 HTTP/1.1" 200 -
+2025-07-19 19:31:10 - INFO - 127.0.0.1 - - [19/Jul/2025 19:31:10] "POST /buscar_skus HTTP/1.1" 200 -
+2025-07-19 19:31:12 - INFO - 127.0.0.1 - - [19/Jul/2025 19:31:12] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-19 19:31:12 - INFO - 127.0.0.1 - - [19/Jul/2025 19:31:12] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-19 19:31:12 - INFO - 127.0.0.1 - - [19/Jul/2025 19:31:12] "GET /static/css/navbar.css HTTP/1.1" 200 -
+2025-07-19 19:31:12 - INFO - 127.0.0.1 - - [19/Jul/2025 19:31:12] "GET /static/js/navbar.js HTTP/1.1" 200 -
+2025-07-19 19:31:12 - INFO - 127.0.0.1 - - [19/Jul/2025 19:31:12] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-19 19:31:12 - INFO - 127.0.0.1 - - [19/Jul/2025 19:31:12] "GET /static/js/mensagem.js HTTP/1.1" 200 -
+2025-07-19 19:31:12 - INFO - 127.0.0.1 - - [19/Jul/2025 19:31:12] "GET /static/js/local.js HTTP/1.1" 200 -
+2025-07-19 19:31:12 - INFO - 127.0.0.1 - - [19/Jul/2025 19:31:12] "GET /static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-19 19:31:13 - INFO - 127.0.0.1 - - [19/Jul/2025 19:31:13] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-19 19:31:13 - INFO - 127.0.0.1 - - [19/Jul/2025 19:31:13] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-19 19:31:27 - INFO - 127.0.0.1 - - [19/Jul/2025 19:31:27] "GET /static/js/navbar.js HTTP/1.1" 200 -
+2025-07-19 19:31:27 - INFO - 127.0.0.1 - - [19/Jul/2025 19:31:27] "[32mGET /pdv_estoque HTTP/1.1[0m" 302 -
+2025-07-19 19:31:27 - INFO - 127.0.0.1 - - [19/Jul/2025 19:31:27] "GET /static/js/local.js HTTP/1.1" 200 -
+2025-07-19 19:31:27 - INFO - 127.0.0.1 - - [19/Jul/2025 19:31:27] "GET /static/js/mensagem.js HTTP/1.1" 200 -
+2025-07-19 19:31:27 - INFO - 127.0.0.1 - - [19/Jul/2025 19:31:27] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-19 19:31:27 - INFO - 127.0.0.1 - - [19/Jul/2025 19:31:27] "GET /login HTTP/1.1" 200 -
+2025-07-19 19:31:36 - INFO - 127.0.0.1 - - [19/Jul/2025 19:31:36] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-19 19:33:53 - INFO - 127.0.0.1 - - [19/Jul/2025 19:33:53] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-19 19:33:53 - INFO - 127.0.0.1 - - [19/Jul/2025 19:33:53] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-19 19:33:53 - INFO - 127.0.0.1 - - [19/Jul/2025 19:33:53] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-19 19:33:53 - INFO - 127.0.0.1 - - [19/Jul/2025 19:33:53] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-19 19:33:53 - INFO - 127.0.0.1 - - [19/Jul/2025 19:33:53] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-19 19:33:53 - INFO - 127.0.0.1 - - [19/Jul/2025 19:33:53] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-19 19:33:53 - INFO - 127.0.0.1 - - [19/Jul/2025 19:33:53] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-19 19:33:53 - INFO - 127.0.0.1 - - [19/Jul/2025 19:33:53] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-19 19:33:53 - INFO - 127.0.0.1 - - [19/Jul/2025 19:33:53] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-19 19:33:53 - INFO - 127.0.0.1 - - [19/Jul/2025 19:33:53] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-19 19:54:09 - INFO - 127.0.0.1 - - [19/Jul/2025 19:54:09] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2025-07-19 19:54:09 - INFO - 127.0.0.1 - - [19/Jul/2025 19:54:09] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-19 19:54:15 - INFO - 127.0.0.1 - - [19/Jul/2025 19:54:15] "GET /nota_fiscal HTTP/1.1" 200 -
+2025-07-19 19:54:15 - INFO - 127.0.0.1 - - [19/Jul/2025 19:54:15] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-19 19:54:15 - INFO - 127.0.0.1 - - [19/Jul/2025 19:54:15] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-19 19:54:15 - INFO - 127.0.0.1 - - [19/Jul/2025 19:54:15] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-19 19:54:18 - INFO - 127.0.0.1 - - [19/Jul/2025 19:54:18] "[32mGET /ver_pdv HTTP/1.1[0m" 302 -
+2025-07-19 19:54:18 - INFO - 127.0.0.1 - - [19/Jul/2025 19:54:18] "GET /login HTTP/1.1" 200 -
+2025-07-19 19:54:18 - INFO - 127.0.0.1 - - [19/Jul/2025 19:54:18] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+2025-07-19 19:54:18 - INFO - 127.0.0.1 - - [19/Jul/2025 19:54:18] "[36mGET //static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-19 19:54:19 - INFO - 127.0.0.1 - - [19/Jul/2025 19:54:19] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-07-19 19:54:20 - INFO - 127.0.0.1 - - [19/Jul/2025 19:54:20] "GET /redes HTTP/1.1" 200 -
+2025-07-19 19:54:20 - INFO - 127.0.0.1 - - [19/Jul/2025 19:54:20] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-19 19:54:20 - INFO - 127.0.0.1 - - [19/Jul/2025 19:54:20] "GET /static/img/FRUTAP.png HTTP/1.1" 200 -
+2025-07-19 19:54:28 - INFO - 127.0.0.1 - - [19/Jul/2025 19:54:28] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-07-19 19:54:28 - INFO - 127.0.0.1 - - [19/Jul/2025 19:54:28] "GET /ver_pdv HTTP/1.1" 200 -
+2025-07-19 19:54:28 - INFO - 127.0.0.1 - - [19/Jul/2025 19:54:28] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-19 19:54:28 - INFO - 127.0.0.1 - - [19/Jul/2025 19:54:28] "GET /static/css/ver_pdv.css HTTP/1.1" 200 -
+2025-07-19 19:54:28 - INFO - 127.0.0.1 - - [19/Jul/2025 19:54:28] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-19 19:54:28 - INFO - 127.0.0.1 - - [19/Jul/2025 19:54:28] "GET /static/js/ver_pdv.js HTTP/1.1" 200 -
+2025-07-19 19:54:28 - INFO - 127.0.0.1 - - [19/Jul/2025 19:54:28] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-19 19:55:27 - INFO - 127.0.0.1 - - [19/Jul/2025 19:55:27] "GET /get_vencimentos?id_pdv=177 HTTP/1.1" 200 -
+2025-07-19 19:55:29 - INFO - 127.0.0.1 - - [19/Jul/2025 19:55:29] "GET /get_photos/177 HTTP/1.1" 200 -
+2025-07-19 19:55:29 - DEBUG - Building SSL context
+2025-07-19 19:55:29 - DEBUG - Switching to SSL
+2025-07-19 19:55:29 - DEBUG - SSL has been enabled
+2025-07-19 19:55:29 - DEBUG - Starting authorization phase
+2025-07-19 19:55:29 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-07-19 19:55:29 - DEBUG - Server's response is an auth switch request
+2025-07-19 19:55:29 - DEBUG - Switching to strategy mysql_native_password
+2025-07-19 19:55:29 - DEBUG - # request: b'\x13\xb2X\xa8A\x9a\xeeJc\xa3N\xdfZ\xc8&K\x01\xb5\x0e\xd6' size: 20
+2025-07-19 19:55:29 - INFO - 127.0.0.1 - - [19/Jul/2025 19:55:29] "GET /imagem_base64_nova/40 HTTP/1.1" 200 -
+2025-07-19 19:55:29 - DEBUG - # server response packet: b'\x07\x00\x00\x05\x00\x00\x00\x02\x00\x00\x00'
+2025-07-19 19:55:29 - DEBUG - mysql_native_password completed succesfully
+2025-07-19 19:55:29 - INFO - 127.0.0.1 - - [19/Jul/2025 19:55:29] "GET /imagem_base64_nova/41 HTTP/1.1" 200 -
+2025-07-19 20:04:54 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-19 20:04:54 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-19 20:04:54 - INFO -  * Restarting with stat
+2025-07-19 20:04:55 - WARNING -  * Debugger is active!
+2025-07-19 20:04:55 - INFO -  * Debugger PIN: 794-271-249
+2025-07-19 20:05:03 - INFO - 127.0.0.1 - - [19/Jul/2025 20:05:03] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-07-19 20:05:03 - INFO - 127.0.0.1 - - [19/Jul/2025 20:05:03] "GET /login HTTP/1.1" 200 -
+2025-07-19 20:05:04 - INFO - 127.0.0.1 - - [19/Jul/2025 20:05:04] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+2025-07-19 20:05:04 - INFO - 127.0.0.1 - - [19/Jul/2025 20:05:04] "[36mGET //static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-19 20:05:06 - INFO - 127.0.0.1 - - [19/Jul/2025 20:05:06] "GET /login HTTP/1.1" 200 -
+2025-07-19 20:05:06 - INFO - 127.0.0.1 - - [19/Jul/2025 20:05:06] "GET /static/css/login.css HTTP/1.1" 200 -
+2025-07-19 20:05:06 - INFO - 127.0.0.1 - - [19/Jul/2025 20:05:06] "GET //static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-19 20:05:06 - INFO - 127.0.0.1 - - [19/Jul/2025 20:05:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-19 20:05:08 - DEBUG - Building SSL context
+2025-07-19 20:05:08 - DEBUG - Switching to SSL
+2025-07-19 20:05:08 - DEBUG - SSL has been enabled
+2025-07-19 20:05:08 - DEBUG - Starting authorization phase
+2025-07-19 20:05:08 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-07-19 20:05:08 - INFO - package: mysql.connector.plugins
+2025-07-19 20:05:08 - INFO - plugin_name: caching_sha2_password
+2025-07-19 20:05:08 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-07-19 20:05:08 - DEBUG - Server's response is an auth switch request
+2025-07-19 20:05:08 - DEBUG - Switching to strategy mysql_native_password
+2025-07-19 20:05:08 - INFO - package: mysql.connector.plugins
+2025-07-19 20:05:08 - INFO - plugin_name: mysql_native_password
+2025-07-19 20:05:08 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2025-07-19 20:05:08 - DEBUG - # request: b'\xc7\x17\xb4\x06\x1d\x93\xfa4\r\x82\xa1\x03\xb0Y+B{P\x14\x92' size: 20
+2025-07-19 20:05:08 - DEBUG - # server response packet: b'\x07\x00\x00\x05\x00\x00\x00\x02\x00\x00\x00'
+2025-07-19 20:05:08 - DEBUG - mysql_native_password completed succesfully
+2025-07-19 20:05:08 - INFO - 127.0.0.1 - - [19/Jul/2025 20:05:08] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-07-19 20:05:08 - INFO - 127.0.0.1 - - [19/Jul/2025 20:05:08] "GET /redes HTTP/1.1" 200 -
+2025-07-19 20:05:08 - INFO - 127.0.0.1 - - [19/Jul/2025 20:05:08] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-19 20:05:08 - INFO - 127.0.0.1 - - [19/Jul/2025 20:05:08] "[36mGET /static/img/FRUTAP.png HTTP/1.1[0m" 304 -
+2025-07-19 20:05:09 - INFO - 127.0.0.1 - - [19/Jul/2025 20:05:09] "GET /sku?cliente_id=2 HTTP/1.1" 200 -
+2025-07-19 20:05:11 - INFO - 127.0.0.1 - - [19/Jul/2025 20:05:11] "POST /buscar_skus HTTP/1.1" 200 -
+2025-07-19 20:05:12 - INFO - 127.0.0.1 - - [19/Jul/2025 20:05:12] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-19 20:05:12 - INFO - 127.0.0.1 - - [19/Jul/2025 20:05:12] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-19 20:05:12 - INFO - 127.0.0.1 - - [19/Jul/2025 20:05:12] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-19 20:05:12 - INFO - 127.0.0.1 - - [19/Jul/2025 20:05:12] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-19 20:05:12 - INFO - 127.0.0.1 - - [19/Jul/2025 20:05:12] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-19 20:05:12 - INFO - 127.0.0.1 - - [19/Jul/2025 20:05:12] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-19 20:05:12 - INFO - 127.0.0.1 - - [19/Jul/2025 20:05:12] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-19 20:05:12 - INFO - 127.0.0.1 - - [19/Jul/2025 20:05:12] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-19 20:05:12 - INFO - 127.0.0.1 - - [19/Jul/2025 20:05:12] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-19 20:05:12 - INFO - 127.0.0.1 - - [19/Jul/2025 20:05:12] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 17:53:29 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-22 17:53:29 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-22 17:53:29 - INFO -  * Restarting with stat
+2025-07-22 17:53:30 - WARNING -  * Debugger is active!
+2025-07-22 17:53:30 - INFO -  * Debugger PIN: 794-271-249
+2025-07-22 17:54:03 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:03] "GET / HTTP/1.1" 200 -
+2025-07-22 17:54:03 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:03] "GET /static/css/login.css HTTP/1.1" 200 -
+2025-07-22 17:54:03 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:03] "GET //static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-22 17:54:03 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 17:54:05 - DEBUG - Building SSL context
+2025-07-22 17:54:05 - DEBUG - Switching to SSL
+2025-07-22 17:54:05 - DEBUG - SSL has been enabled
+2025-07-22 17:54:05 - DEBUG - Starting authorization phase
+2025-07-22 17:54:05 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-07-22 17:54:05 - INFO - package: mysql.connector.plugins
+2025-07-22 17:54:05 - INFO - plugin_name: caching_sha2_password
+2025-07-22 17:54:05 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-07-22 17:54:05 - DEBUG - Server's response is an auth switch request
+2025-07-22 17:54:05 - DEBUG - Switching to strategy mysql_native_password
+2025-07-22 17:54:05 - INFO - package: mysql.connector.plugins
+2025-07-22 17:54:05 - INFO - plugin_name: mysql_native_password
+2025-07-22 17:54:05 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2025-07-22 17:54:05 - DEBUG - # request: b'\x8c\xbc\x17\x96\x07\xddOM\xb7\x15\xf4\xfftpy\x81\xc4$\xc3^' size: 20
+2025-07-22 17:54:05 - DEBUG - # server response packet: b'\x07\x00\x00\x05\x00\x00\x00\x02\x00\x00\x00'
+2025-07-22 17:54:05 - DEBUG - mysql_native_password completed succesfully
+2025-07-22 17:54:05 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:05] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-07-22 17:54:05 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:05] "GET /redes HTTP/1.1" 200 -
+2025-07-22 17:54:05 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:05] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-22 17:54:05 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:05] "GET /static/img/FRUTAP.png HTTP/1.1" 200 -
+2025-07-22 17:54:08 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:08] "[32mGET /ver_pdv HTTP/1.1[0m" 302 -
+2025-07-22 17:54:08 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:08] "GET /login HTTP/1.1" 200 -
+2025-07-22 17:54:08 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:08] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+2025-07-22 17:54:08 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:08] "[36mGET //static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 17:54:10 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:10] "GET /sku?cliente_id=2 HTTP/1.1" 200 -
+2025-07-22 17:54:12 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:12] "POST /buscar_skus HTTP/1.1" 200 -
+2025-07-22 17:54:16 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:16] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 17:54:16 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:16] "GET /static/css/navbar.css HTTP/1.1" 200 -
+2025-07-22 17:54:16 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:16] "GET /static/js/navbar.js HTTP/1.1" 200 -
+2025-07-22 17:54:16 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:16] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 17:54:16 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:16] "GET /static/js/local.js HTTP/1.1" 200 -
+2025-07-22 17:54:16 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:16] "GET /static/js/mensagem.js HTTP/1.1" 200 -
+2025-07-22 17:54:16 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:16] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 17:54:16 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:16] "GET /static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-22 17:54:16 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:16] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 17:54:16 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:16] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 17:54:41 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:41] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2025-07-22 17:54:41 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:41] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 17:54:52 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:52] "[32mGET /ver_pdv HTTP/1.1[0m" 302 -
+2025-07-22 17:54:52 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:52] "GET /login HTTP/1.1" 200 -
+2025-07-22 17:54:52 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:52] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+2025-07-22 17:54:52 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:52] "[36mGET //static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 17:54:57 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:57] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-07-22 17:54:57 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:57] "GET /ver_pdv HTTP/1.1" 200 -
+2025-07-22 17:54:58 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:58] "GET /static/css/ver_pdv.css HTTP/1.1" 200 -
+2025-07-22 17:54:58 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:58] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 17:54:58 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:58] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 17:54:58 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:58] "GET /static/js/ver_pdv.js HTTP/1.1" 200 -
+2025-07-22 17:54:58 - INFO - 127.0.0.1 - - [22/Jul/2025 17:54:58] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 17:55:06 - INFO - 127.0.0.1 - - [22/Jul/2025 17:55:06] "GET /get_vencimentos?id_pdv=194 HTTP/1.1" 200 -
+2025-07-22 17:55:07 - INFO - 127.0.0.1 - - [22/Jul/2025 17:55:07] "GET /get_photos/194 HTTP/1.1" 200 -
+2025-07-22 17:55:07 - DEBUG - Building SSL context
+2025-07-22 17:55:07 - DEBUG - Switching to SSL
+2025-07-22 17:55:07 - DEBUG - SSL has been enabled
+2025-07-22 17:55:07 - DEBUG - Starting authorization phase
+2025-07-22 17:55:07 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-07-22 17:55:07 - DEBUG - Server's response is an auth switch request
+2025-07-22 17:55:07 - DEBUG - Switching to strategy mysql_native_password
+2025-07-22 17:55:07 - DEBUG - # request: b']\x83\x1f\xae\xcb\xca\x02\xea\x0b+\x8a,Z9\xa4\x03\x045\xbd\xcf' size: 20
+2025-07-22 17:55:07 - INFO - 127.0.0.1 - - [22/Jul/2025 17:55:07] "GET /imagem_base64_nova/73 HTTP/1.1" 200 -
+2025-07-22 17:55:07 - DEBUG - # server response packet: b'\x07\x00\x00\x05\x00\x00\x00\x02\x00\x00\x00'
+2025-07-22 17:55:07 - DEBUG - mysql_native_password completed succesfully
+2025-07-22 17:55:07 - INFO - 127.0.0.1 - - [22/Jul/2025 17:55:07] "GET /imagem_base64_nova/74 HTTP/1.1" 200 -
+2025-07-22 17:56:11 - INFO - 127.0.0.1 - - [22/Jul/2025 17:56:11] "GET /static/js/navbar.js HTTP/1.1" 200 -
+2025-07-22 17:56:11 - INFO - 127.0.0.1 - - [22/Jul/2025 17:56:11] "[32mGET /pdv_estoque HTTP/1.1[0m" 302 -
+2025-07-22 17:56:11 - INFO - 127.0.0.1 - - [22/Jul/2025 17:56:11] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 17:56:11 - INFO - 127.0.0.1 - - [22/Jul/2025 17:56:11] "GET /static/js/local.js HTTP/1.1" 200 -
+2025-07-22 17:56:11 - INFO - 127.0.0.1 - - [22/Jul/2025 17:56:11] "GET /static/js/mensagem.js HTTP/1.1" 200 -
+2025-07-22 17:56:11 - INFO - 127.0.0.1 - - [22/Jul/2025 17:56:11] "[32mGET /pdv_estoque HTTP/1.1[0m" 302 -
+2025-07-22 17:56:11 - INFO - 127.0.0.1 - - [22/Jul/2025 17:56:11] "GET /login HTTP/1.1" 200 -
