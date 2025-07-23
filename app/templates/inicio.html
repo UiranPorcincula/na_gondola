@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Principal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .button-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            width: 100%;
+        }
+        
+        .btn {
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            background-color: #3367d6;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn-register {
+            background-color: #34a853;
+        }
+        
+        .btn-register:hover {
+            background-color: #2d9248;
+        }
+        
+        .btn-inventory {
+            background-color: #fbbc05;
+        }
+        
+        .btn-inventory:hover {
+            background-color: #e6ac04;
+        }
+        
+        .btn-price {
+            background-color: #ea4335;
+        }
+        
+        .btn-price:hover {
+            background-color: #d33426;
+        }
+        
+        .btn-expiry {
+            background-color: #673ab7;
+        }
+        
+        .btn-expiry:hover {
+            background-color: #5e35b1;
+        }
+        
+        .btn-invoice {
+            background-color: #009688;
+        }
+        
+        .btn-invoice:hover {
+            background-color: #00897b;
+        }
+        
+        .btn-gondola {
+            background-color: #ff5722;
+        }
+        
+        .btn-gondola:hover {
+            background-color: #f4511e;
+        }
+        
+        .btn-route {
+            background-color: #607d8b;
+        }
+        
+        .btn-route:hover {
+            background-color: #546e7a;
+        }
+        
+        @media (min-width: 768px) {
+            .button-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .header h1 {
+                font-size: 28px;
+            }
+            
+            .btn {
+                padding: 18px 24px;
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Menu Principal</h1>
+        </div>
+        
+        <div class="button-grid">
+            <button class="btn btn-register">Registrar Ponto</button>
+            <button class="btn btn-inventory">Levantamento de Estoque</button>
+            <button class="btn btn-price">Pesquisa de Preço</button>
+            <button class="btn btn-expiry">Pesquisa de Validade</button>
+            <button class="btn btn-invoice">Envio de Notas Fiscais</button>
+            <button class="btn btn-gondola">Ponta de Gôndola</button>
+            <button class="btn btn-route">Meu Roteiro</button>
+        </div>
+    </div>
+</body>
+</html>

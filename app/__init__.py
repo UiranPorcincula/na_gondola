@@ -44,6 +44,9 @@ def create_app():
     
     from app.routes.users import users_bp
     app.register_blueprint(users_bp)
+
+    from app.routes.inicio import inicio_bp
+    app.register_blueprint(inicio_bp)
     
     # Register custom template filters
     from app.utils.formatters import format_price, format_value

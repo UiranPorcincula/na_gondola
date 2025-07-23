@@ -8215,3 +8215,836 @@ werkzeug.routing.BuildError: Could not build url for endpoint 'total_edit' with 
 2025-07-22 17:56:11 - INFO - 127.0.0.1 - - [22/Jul/2025 17:56:11] "GET /static/js/mensagem.js HTTP/1.1" 200 -
 2025-07-22 17:56:11 - INFO - 127.0.0.1 - - [22/Jul/2025 17:56:11] "[32mGET /pdv_estoque HTTP/1.1[0m" 302 -
 2025-07-22 17:56:11 - INFO - 127.0.0.1 - - [22/Jul/2025 17:56:11] "GET /login HTTP/1.1" 200 -
+2025-07-22 18:29:35 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-22 18:29:35 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-22 18:29:35 - INFO -  * Restarting with stat
+2025-07-22 18:29:36 - WARNING -  * Debugger is active!
+2025-07-22 18:29:36 - INFO -  * Debugger PIN: 794-271-249
+2025-07-22 18:29:38 - DEBUG - Building SSL context
+2025-07-22 18:29:38 - DEBUG - Switching to SSL
+2025-07-22 18:29:39 - DEBUG - SSL has been enabled
+2025-07-22 18:29:39 - DEBUG - Starting authorization phase
+2025-07-22 18:29:39 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-07-22 18:29:39 - INFO - package: mysql.connector.plugins
+2025-07-22 18:29:39 - INFO - plugin_name: caching_sha2_password
+2025-07-22 18:29:39 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-07-22 18:29:39 - DEBUG - Server's response is an auth switch request
+2025-07-22 18:29:39 - DEBUG - Switching to strategy mysql_native_password
+2025-07-22 18:29:39 - INFO - package: mysql.connector.plugins
+2025-07-22 18:29:39 - INFO - plugin_name: mysql_native_password
+2025-07-22 18:29:39 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2025-07-22 18:29:39 - DEBUG - # request: b'\xccHg\xddD\xef\xcc\xcf\xddk\xc3g\x1d(\xd8\xc7\xccc\xbe\xe9' size: 20
+2025-07-22 18:29:39 - DEBUG - # server response packet: b'\x07\x00\x00\x05\x00\x00\x00\x02\x00\x00\x00'
+2025-07-22 18:29:39 - DEBUG - mysql_native_password completed succesfully
+2025-07-22 18:29:39 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:39] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 18:29:42 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:42] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 18:29:43 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:43] "GET /static/css/navbar.css HTTP/1.1" 200 -
+2025-07-22 18:29:43 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:43] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-22 18:29:43 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:43] "GET /static/js/mensagem.js HTTP/1.1" 200 -
+2025-07-22 18:29:43 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:43] "GET /static/js/local.js HTTP/1.1" 200 -
+2025-07-22 18:29:43 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:43] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 18:29:43 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:43] "GET /static/js/navbar.js HTTP/1.1" 200 -
+2025-07-22 18:29:43 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:43] "GET /static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-22 18:29:43 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:43] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 18:29:43 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 18:29:43 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:43] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 18:29:51 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:51] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 18:29:51 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:51] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-22 18:29:51 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:51] "GET /static/css/navbar.css HTTP/1.1" 200 -
+2025-07-22 18:29:51 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:51] "GET /static/js/navbar.js HTTP/1.1" 200 -
+2025-07-22 18:29:51 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:51] "GET /static/js/local.js HTTP/1.1" 200 -
+2025-07-22 18:29:51 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:51] "GET /static/js/mensagem.js HTTP/1.1" 200 -
+2025-07-22 18:29:51 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:51] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 18:29:51 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:51] "GET /static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-22 18:29:51 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:51] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 18:29:51 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 18:29:51 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:51] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 18:29:56 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:56] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-07-22 18:29:56 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:56] "GET /login HTTP/1.1" 200 -
+2025-07-22 18:29:56 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:56] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+2025-07-22 18:29:56 - INFO - 127.0.0.1 - - [22/Jul/2025 18:29:56] "[36mGET //static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 18:30:07 - INFO - 127.0.0.1 - - [22/Jul/2025 18:30:07] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-07-22 18:30:08 - INFO - 127.0.0.1 - - [22/Jul/2025 18:30:08] "GET /redes HTTP/1.1" 200 -
+2025-07-22 18:30:08 - INFO - 127.0.0.1 - - [22/Jul/2025 18:30:08] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 18:30:08 - INFO - 127.0.0.1 - - [22/Jul/2025 18:30:08] "[36mGET /static/img/FRUTAP.png HTTP/1.1[0m" 304 -
+2025-07-22 18:30:09 - INFO - 127.0.0.1 - - [22/Jul/2025 18:30:09] "GET /sku?cliente_id=2 HTTP/1.1" 200 -
+2025-07-22 18:30:10 - INFO - 127.0.0.1 - - [22/Jul/2025 18:30:10] "POST /buscar_skus HTTP/1.1" 200 -
+2025-07-22 18:30:12 - INFO - 127.0.0.1 - - [22/Jul/2025 18:30:12] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 18:30:12 - INFO - 127.0.0.1 - - [22/Jul/2025 18:30:12] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 18:30:12 - INFO - 127.0.0.1 - - [22/Jul/2025 18:30:12] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 18:30:12 - INFO - 127.0.0.1 - - [22/Jul/2025 18:30:12] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 18:30:12 - INFO - 127.0.0.1 - - [22/Jul/2025 18:30:12] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 18:30:12 - INFO - 127.0.0.1 - - [22/Jul/2025 18:30:12] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-22 18:30:12 - INFO - 127.0.0.1 - - [22/Jul/2025 18:30:12] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-22 18:30:12 - INFO - 127.0.0.1 - - [22/Jul/2025 18:30:12] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 18:30:12 - INFO - 127.0.0.1 - - [22/Jul/2025 18:30:12] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 18:30:12 - INFO - 127.0.0.1 - - [22/Jul/2025 18:30:12] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 18:30:25 - INFO - 127.0.0.1 - - [22/Jul/2025 18:30:25] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2025-07-22 18:30:26 - INFO - 127.0.0.1 - - [22/Jul/2025 18:30:26] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 18:33:10 - INFO - 127.0.0.1 - - [22/Jul/2025 18:33:10] "[32mGET /pdv_estoque HTTP/1.1[0m" 302 -
+2025-07-22 18:33:10 - INFO - 127.0.0.1 - - [22/Jul/2025 18:33:10] "GET /login HTTP/1.1" 200 -
+2025-07-22 18:33:10 - INFO - 127.0.0.1 - - [22/Jul/2025 18:33:10] "GET /static/css/login.css HTTP/1.1" 200 -
+2025-07-22 18:33:10 - INFO - 127.0.0.1 - - [22/Jul/2025 18:33:10] "GET //static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-22 18:33:49 - INFO - 127.0.0.1 - - [22/Jul/2025 18:33:49] "[33mGET /modal HTTP/1.1[0m" 404 -
+2025-07-22 18:33:56 - INFO - 127.0.0.1 - - [22/Jul/2025 18:33:56] "[33mGET /modal.html HTTP/1.1[0m" 404 -
+2025-07-22 18:37:24 - INFO - 127.0.0.1 - - [22/Jul/2025 18:37:24] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 18:37:24 - INFO - 127.0.0.1 - - [22/Jul/2025 18:37:24] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 18:37:24 - INFO - 127.0.0.1 - - [22/Jul/2025 18:37:24] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 18:37:24 - INFO - 127.0.0.1 - - [22/Jul/2025 18:37:24] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 18:37:24 - INFO - 127.0.0.1 - - [22/Jul/2025 18:37:24] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 18:37:24 - INFO - 127.0.0.1 - - [22/Jul/2025 18:37:24] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-22 18:37:24 - INFO - 127.0.0.1 - - [22/Jul/2025 18:37:24] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 18:37:24 - INFO - 127.0.0.1 - - [22/Jul/2025 18:37:24] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-22 18:37:24 - INFO - 127.0.0.1 - - [22/Jul/2025 18:37:24] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 18:37:29 - INFO - 127.0.0.1 - - [22/Jul/2025 18:37:29] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 18:37:29 - INFO - 127.0.0.1 - - [22/Jul/2025 18:37:29] "GET /static/css/navbar.css HTTP/1.1" 200 -
+2025-07-22 18:37:29 - INFO - 127.0.0.1 - - [22/Jul/2025 18:37:29] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-22 18:37:29 - INFO - 127.0.0.1 - - [22/Jul/2025 18:37:29] "GET /static/js/navbar.js HTTP/1.1" 200 -
+2025-07-22 18:37:29 - INFO - 127.0.0.1 - - [22/Jul/2025 18:37:29] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 18:37:29 - INFO - 127.0.0.1 - - [22/Jul/2025 18:37:29] "GET /static/js/local.js HTTP/1.1" 200 -
+2025-07-22 18:37:29 - INFO - 127.0.0.1 - - [22/Jul/2025 18:37:29] "GET /static/js/mensagem.js HTTP/1.1" 200 -
+2025-07-22 18:37:29 - INFO - 127.0.0.1 - - [22/Jul/2025 18:37:29] "GET /static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-22 18:37:29 - INFO - 127.0.0.1 - - [22/Jul/2025 18:37:29] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 18:37:29 - INFO - 127.0.0.1 - - [22/Jul/2025 18:37:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 18:41:10 - INFO - 127.0.0.1 - - [22/Jul/2025 18:41:10] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 18:41:11 - INFO - 127.0.0.1 - - [22/Jul/2025 18:41:11] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 18:41:11 - INFO - 127.0.0.1 - - [22/Jul/2025 18:41:11] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 18:41:11 - INFO - 127.0.0.1 - - [22/Jul/2025 18:41:11] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 18:41:11 - INFO - 127.0.0.1 - - [22/Jul/2025 18:41:11] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 18:41:11 - INFO - 127.0.0.1 - - [22/Jul/2025 18:41:11] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-22 18:41:11 - INFO - 127.0.0.1 - - [22/Jul/2025 18:41:11] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-22 18:41:11 - INFO - 127.0.0.1 - - [22/Jul/2025 18:41:11] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 18:41:11 - INFO - 127.0.0.1 - - [22/Jul/2025 18:41:11] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 18:41:11 - INFO - 127.0.0.1 - - [22/Jul/2025 18:41:11] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 18:41:20 - INFO - 127.0.0.1 - - [22/Jul/2025 18:41:20] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2025-07-22 18:41:20 - INFO - 127.0.0.1 - - [22/Jul/2025 18:41:20] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 18:43:09 - INFO - 127.0.0.1 - - [22/Jul/2025 18:43:09] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 18:43:09 - INFO - 127.0.0.1 - - [22/Jul/2025 18:43:09] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 18:43:09 - INFO - 127.0.0.1 - - [22/Jul/2025 18:43:09] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 18:43:09 - INFO - 127.0.0.1 - - [22/Jul/2025 18:43:09] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 18:43:09 - INFO - 127.0.0.1 - - [22/Jul/2025 18:43:09] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 18:43:09 - INFO - 127.0.0.1 - - [22/Jul/2025 18:43:09] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-22 18:43:09 - INFO - 127.0.0.1 - - [22/Jul/2025 18:43:09] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-22 18:43:09 - INFO - 127.0.0.1 - - [22/Jul/2025 18:43:09] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 18:43:09 - INFO - 127.0.0.1 - - [22/Jul/2025 18:43:09] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 18:43:09 - INFO - 127.0.0.1 - - [22/Jul/2025 18:43:09] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 18:43:13 - INFO - 127.0.0.1 - - [22/Jul/2025 18:43:13] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 18:43:13 - INFO - 127.0.0.1 - - [22/Jul/2025 18:43:13] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-22 18:43:13 - INFO - 127.0.0.1 - - [22/Jul/2025 18:43:13] "GET /static/css/navbar.css HTTP/1.1" 200 -
+2025-07-22 18:43:13 - INFO - 127.0.0.1 - - [22/Jul/2025 18:43:13] "GET /static/js/navbar.js HTTP/1.1" 200 -
+2025-07-22 18:43:13 - INFO - 127.0.0.1 - - [22/Jul/2025 18:43:13] "GET /static/js/local.js HTTP/1.1" 200 -
+2025-07-22 18:43:13 - INFO - 127.0.0.1 - - [22/Jul/2025 18:43:13] "GET /static/js/mensagem.js HTTP/1.1" 200 -
+2025-07-22 18:43:13 - INFO - 127.0.0.1 - - [22/Jul/2025 18:43:13] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 18:43:13 - INFO - 127.0.0.1 - - [22/Jul/2025 18:43:13] "GET /static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-22 18:43:14 - INFO - 127.0.0.1 - - [22/Jul/2025 18:43:14] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 18:43:14 - INFO - 127.0.0.1 - - [22/Jul/2025 18:43:14] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 18:43:14 - INFO - 127.0.0.1 - - [22/Jul/2025 18:43:14] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 18:46:46 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:46] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 18:46:46 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:46] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 18:46:46 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:46] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 18:46:46 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:46] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-22 18:46:46 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:46] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 18:46:46 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:46] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 18:46:46 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:46] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-22 18:46:46 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:46] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 18:46:46 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:46] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 18:46:46 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:46] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-22 18:46:46 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:46] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-22 18:46:46 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:46] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 18:46:46 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:46] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 18:46:52 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:52] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 18:46:52 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:52] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-22 18:46:52 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:52] "GET /static/css/navbar.css HTTP/1.1" 200 -
+2025-07-22 18:46:52 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:52] "GET /static/js/navbar.js HTTP/1.1" 200 -
+2025-07-22 18:46:52 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:52] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 18:46:52 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:52] "GET /static/js/local.js HTTP/1.1" 200 -
+2025-07-22 18:46:52 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:52] "GET /static/js/mensagem.js HTTP/1.1" 200 -
+2025-07-22 18:46:52 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:52] "GET /static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-22 18:46:53 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:53] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 18:46:53 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:53] "GET /static/js/local.js HTTP/1.1" 200 -
+2025-07-22 18:46:53 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:53] "GET /static/js/mensagem.js HTTP/1.1" 200 -
+2025-07-22 18:46:53 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 18:46:53 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:53] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 18:46:53 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:53] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 18:46:58 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:58] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 18:46:58 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:58] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 18:46:58 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:58] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 18:46:58 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:58] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 18:46:58 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:58] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-22 18:46:58 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:58] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 18:46:58 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:58] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-22 18:46:58 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:58] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 18:46:58 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:58] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 18:46:58 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:58] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-22 18:46:58 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:58] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-22 18:46:58 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:58] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 18:46:59 - INFO - 127.0.0.1 - - [22/Jul/2025 18:46:59] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 18:47:44 - INFO - 127.0.0.1 - - [22/Jul/2025 18:47:44] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 18:47:44 - INFO - 127.0.0.1 - - [22/Jul/2025 18:47:44] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-22 18:47:44 - INFO - 127.0.0.1 - - [22/Jul/2025 18:47:44] "GET /static/css/navbar.css HTTP/1.1" 200 -
+2025-07-22 18:47:44 - INFO - 127.0.0.1 - - [22/Jul/2025 18:47:44] "GET /static/js/navbar.js HTTP/1.1" 200 -
+2025-07-22 18:47:44 - INFO - 127.0.0.1 - - [22/Jul/2025 18:47:44] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 18:47:44 - INFO - 127.0.0.1 - - [22/Jul/2025 18:47:44] "GET /static/js/local.js HTTP/1.1" 200 -
+2025-07-22 18:47:44 - INFO - 127.0.0.1 - - [22/Jul/2025 18:47:44] "GET /static/js/mensagem.js HTTP/1.1" 200 -
+2025-07-22 18:47:44 - INFO - 127.0.0.1 - - [22/Jul/2025 18:47:44] "GET /static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-22 18:47:44 - INFO - 127.0.0.1 - - [22/Jul/2025 18:47:44] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 18:47:44 - INFO - 127.0.0.1 - - [22/Jul/2025 18:47:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 18:47:44 - INFO - 127.0.0.1 - - [22/Jul/2025 18:47:44] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 18:56:55 - INFO - 127.0.0.1 - - [22/Jul/2025 18:56:55] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 18:56:55 - INFO - 127.0.0.1 - - [22/Jul/2025 18:56:55] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 18:56:55 - INFO - 127.0.0.1 - - [22/Jul/2025 18:56:55] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 18:56:55 - INFO - 127.0.0.1 - - [22/Jul/2025 18:56:55] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 18:56:55 - INFO - 127.0.0.1 - - [22/Jul/2025 18:56:55] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 18:56:55 - INFO - 127.0.0.1 - - [22/Jul/2025 18:56:55] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-22 18:56:55 - INFO - 127.0.0.1 - - [22/Jul/2025 18:56:55] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-22 18:56:55 - INFO - 127.0.0.1 - - [22/Jul/2025 18:56:55] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 18:56:55 - INFO - 127.0.0.1 - - [22/Jul/2025 18:56:55] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 18:57:10 - INFO - 127.0.0.1 - - [22/Jul/2025 18:57:10] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 18:57:10 - INFO - 127.0.0.1 - - [22/Jul/2025 18:57:10] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 18:57:10 - INFO - 127.0.0.1 - - [22/Jul/2025 18:57:10] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 18:57:10 - INFO - 127.0.0.1 - - [22/Jul/2025 18:57:10] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 18:57:10 - INFO - 127.0.0.1 - - [22/Jul/2025 18:57:10] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 18:57:10 - INFO - 127.0.0.1 - - [22/Jul/2025 18:57:10] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-22 18:57:10 - INFO - 127.0.0.1 - - [22/Jul/2025 18:57:10] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-22 18:57:10 - INFO - 127.0.0.1 - - [22/Jul/2025 18:57:10] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 18:57:10 - INFO - 127.0.0.1 - - [22/Jul/2025 18:57:10] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 18:57:10 - INFO - 127.0.0.1 - - [22/Jul/2025 18:57:10] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 18:58:10 - INFO - 127.0.0.1 - - [22/Jul/2025 18:58:10] "GET /login HTTP/1.1" 200 -
+2025-07-22 18:58:10 - INFO - 127.0.0.1 - - [22/Jul/2025 18:58:10] "GET /static/css/login.css HTTP/1.1" 200 -
+2025-07-22 18:58:10 - INFO - 127.0.0.1 - - [22/Jul/2025 18:58:10] "GET //static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-22 20:34:43 - DEBUG - Building SSL context
+2025-07-22 20:34:43 - DEBUG - Switching to SSL
+2025-07-22 20:34:43 - DEBUG - SSL has been enabled
+2025-07-22 20:34:43 - DEBUG - Starting authorization phase
+2025-07-22 20:34:43 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-07-22 20:34:43 - DEBUG - Server's response is an auth switch request
+2025-07-22 20:34:43 - DEBUG - Switching to strategy mysql_native_password
+2025-07-22 20:34:43 - DEBUG - # request: b'\x1f\xa3\x99\xa3\xdf\xc9\xc6-2\xab\xbe\xb6\xaf\xf1\xc2/\xd8\x02Q\xc2' size: 20
+2025-07-22 20:34:43 - DEBUG - # server response packet: b'\x07\x00\x00\x05\x00\x00\x00\x02\x00\x00\x00'
+2025-07-22 20:34:43 - DEBUG - mysql_native_password completed succesfully
+2025-07-22 20:34:43 - INFO - 127.0.0.1 - - [22/Jul/2025 20:34:43] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 20:34:44 - INFO - 127.0.0.1 - - [22/Jul/2025 20:34:44] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 20:34:44 - INFO - 127.0.0.1 - - [22/Jul/2025 20:34:44] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 20:34:44 - INFO - 127.0.0.1 - - [22/Jul/2025 20:34:44] "GET /static/js/navbar.js HTTP/1.1" 200 -
+2025-07-22 20:34:44 - INFO - 127.0.0.1 - - [22/Jul/2025 20:34:44] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 20:34:44 - INFO - 127.0.0.1 - - [22/Jul/2025 20:34:44] "GET /static/js/local.js HTTP/1.1" 200 -
+2025-07-22 20:34:44 - INFO - 127.0.0.1 - - [22/Jul/2025 20:34:44] "GET /static/js/mensagem.js HTTP/1.1" 200 -
+2025-07-22 20:34:44 - INFO - 127.0.0.1 - - [22/Jul/2025 20:34:44] "GET /static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-22 20:34:44 - INFO - 127.0.0.1 - - [22/Jul/2025 20:34:44] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 20:35:41 - INFO - 127.0.0.1 - - [22/Jul/2025 20:35:41] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 20:35:41 - INFO - 127.0.0.1 - - [22/Jul/2025 20:35:41] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 20:35:41 - INFO - 127.0.0.1 - - [22/Jul/2025 20:35:41] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 20:35:41 - INFO - 127.0.0.1 - - [22/Jul/2025 20:35:41] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 20:35:41 - INFO - 127.0.0.1 - - [22/Jul/2025 20:35:41] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 20:35:41 - INFO - 127.0.0.1 - - [22/Jul/2025 20:35:41] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-22 20:35:41 - INFO - 127.0.0.1 - - [22/Jul/2025 20:35:41] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-22 20:35:41 - INFO - 127.0.0.1 - - [22/Jul/2025 20:35:41] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 20:35:41 - INFO - 127.0.0.1 - - [22/Jul/2025 20:35:41] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 20:36:09 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:09] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 20:36:09 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:09] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 20:36:09 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:09] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 20:36:09 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:09] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 20:36:09 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:09] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 20:36:09 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:09] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-22 20:36:09 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:09] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-22 20:36:09 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:09] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 20:36:09 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:09] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 20:36:09 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:09] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 20:36:22 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:22] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 20:36:22 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:22] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-22 20:36:22 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:22] "GET /static/css/navbar.css HTTP/1.1" 200 -
+2025-07-22 20:36:22 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:22] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 20:36:23 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:23] "GET /static/js/local.js HTTP/1.1" 200 -
+2025-07-22 20:36:23 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:23] "GET /static/js/mensagem.js HTTP/1.1" 200 -
+2025-07-22 20:36:23 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:23] "GET /static/js/navbar.js HTTP/1.1" 200 -
+2025-07-22 20:36:23 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:23] "GET /static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-22 20:36:23 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:23] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 20:36:23 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:23] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 20:36:23 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:23] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 20:36:30 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:30] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 20:36:30 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:30] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 20:36:30 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:30] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 20:36:30 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:30] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 20:36:30 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:30] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-22 20:36:30 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:30] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 20:36:30 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:30] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-22 20:36:30 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:30] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 20:36:30 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:30] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 20:36:30 - INFO - 127.0.0.1 - - [22/Jul/2025 20:36:30] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 20:37:03 - INFO - 127.0.0.1 - - [22/Jul/2025 20:37:03] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2025-07-22 20:37:03 - INFO - 127.0.0.1 - - [22/Jul/2025 20:37:03] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 20:42:26 - INFO - 127.0.0.1 - - [22/Jul/2025 20:42:26] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 20:42:26 - INFO - 127.0.0.1 - - [22/Jul/2025 20:42:26] "GET /static/css/navbar.css HTTP/1.1" 200 -
+2025-07-22 20:42:26 - INFO - 127.0.0.1 - - [22/Jul/2025 20:42:26] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-22 20:42:26 - INFO - 127.0.0.1 - - [22/Jul/2025 20:42:26] "GET /static/js/navbar.js HTTP/1.1" 200 -
+2025-07-22 20:42:26 - INFO - 127.0.0.1 - - [22/Jul/2025 20:42:26] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 20:42:26 - INFO - 127.0.0.1 - - [22/Jul/2025 20:42:26] "GET /static/js/local.js HTTP/1.1" 200 -
+2025-07-22 20:42:26 - INFO - 127.0.0.1 - - [22/Jul/2025 20:42:26] "GET /static/js/mensagem.js HTTP/1.1" 200 -
+2025-07-22 20:42:26 - INFO - 127.0.0.1 - - [22/Jul/2025 20:42:26] "GET /static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-22 20:42:26 - INFO - 127.0.0.1 - - [22/Jul/2025 20:42:26] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 20:42:26 - INFO - 127.0.0.1 - - [22/Jul/2025 20:42:26] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 20:42:26 - INFO - 127.0.0.1 - - [22/Jul/2025 20:42:26] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 20:42:39 - INFO - 127.0.0.1 - - [22/Jul/2025 20:42:39] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2025-07-22 20:42:39 - INFO - 127.0.0.1 - - [22/Jul/2025 20:42:39] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 20:42:53 - INFO - 127.0.0.1 - - [22/Jul/2025 20:42:53] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 20:42:53 - INFO - 127.0.0.1 - - [22/Jul/2025 20:42:53] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 20:42:53 - INFO - 127.0.0.1 - - [22/Jul/2025 20:42:53] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 20:42:53 - INFO - 127.0.0.1 - - [22/Jul/2025 20:42:53] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 20:42:53 - INFO - 127.0.0.1 - - [22/Jul/2025 20:42:53] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 20:42:53 - INFO - 127.0.0.1 - - [22/Jul/2025 20:42:53] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-22 20:42:53 - INFO - 127.0.0.1 - - [22/Jul/2025 20:42:53] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-22 20:42:53 - INFO - 127.0.0.1 - - [22/Jul/2025 20:42:53] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 20:42:53 - INFO - 127.0.0.1 - - [22/Jul/2025 20:42:53] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 20:42:53 - INFO - 127.0.0.1 - - [22/Jul/2025 20:42:53] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 20:43:15 - INFO - 127.0.0.1 - - [22/Jul/2025 20:43:15] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 20:43:15 - INFO - 127.0.0.1 - - [22/Jul/2025 20:43:15] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 20:43:15 - INFO - 127.0.0.1 - - [22/Jul/2025 20:43:15] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 20:43:15 - INFO - 127.0.0.1 - - [22/Jul/2025 20:43:15] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 20:43:15 - INFO - 127.0.0.1 - - [22/Jul/2025 20:43:15] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 20:43:15 - INFO - 127.0.0.1 - - [22/Jul/2025 20:43:15] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-22 20:43:15 - INFO - 127.0.0.1 - - [22/Jul/2025 20:43:15] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 20:43:15 - INFO - 127.0.0.1 - - [22/Jul/2025 20:43:15] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-22 20:43:15 - INFO - 127.0.0.1 - - [22/Jul/2025 20:43:15] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 20:43:15 - INFO - 127.0.0.1 - - [22/Jul/2025 20:43:15] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 20:43:16 - INFO - 127.0.0.1 - - [22/Jul/2025 20:43:16] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 20:43:16 - INFO - 127.0.0.1 - - [22/Jul/2025 20:43:16] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-22 20:43:16 - INFO - 127.0.0.1 - - [22/Jul/2025 20:43:16] "GET /static/js/mensagem.js HTTP/1.1" 200 -
+2025-07-22 20:43:16 - INFO - 127.0.0.1 - - [22/Jul/2025 20:43:16] "GET /static/css/navbar.css HTTP/1.1" 200 -
+2025-07-22 20:43:16 - INFO - 127.0.0.1 - - [22/Jul/2025 20:43:16] "GET /static/js/local.js HTTP/1.1" 200 -
+2025-07-22 20:43:16 - INFO - 127.0.0.1 - - [22/Jul/2025 20:43:16] "GET /static/js/navbar.js HTTP/1.1" 200 -
+2025-07-22 20:43:16 - INFO - 127.0.0.1 - - [22/Jul/2025 20:43:16] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 20:43:16 - INFO - 127.0.0.1 - - [22/Jul/2025 20:43:16] "GET /static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-22 20:43:16 - INFO - 127.0.0.1 - - [22/Jul/2025 20:43:16] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 20:43:16 - INFO - 127.0.0.1 - - [22/Jul/2025 20:43:16] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 20:43:16 - INFO - 127.0.0.1 - - [22/Jul/2025 20:43:16] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 20:43:29 - INFO - 127.0.0.1 - - [22/Jul/2025 20:43:29] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2025-07-22 20:43:29 - INFO - 127.0.0.1 - - [22/Jul/2025 20:43:29] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 20:45:07 - INFO - 127.0.0.1 - - [22/Jul/2025 20:45:07] "[32mGET /pdv_estoque HTTP/1.1[0m" 302 -
+2025-07-22 20:45:07 - INFO - 127.0.0.1 - - [22/Jul/2025 20:45:07] "GET /login HTTP/1.1" 200 -
+2025-07-22 20:45:07 - INFO - 127.0.0.1 - - [22/Jul/2025 20:45:07] "GET /static/css/login.css HTTP/1.1" 200 -
+2025-07-22 20:45:07 - INFO - 127.0.0.1 - - [22/Jul/2025 20:45:07] "GET //static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-22 20:46:30 - INFO - 127.0.0.1 - - [22/Jul/2025 20:46:30] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 20:46:30 - INFO - 127.0.0.1 - - [22/Jul/2025 20:46:30] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-22 20:46:30 - INFO - 127.0.0.1 - - [22/Jul/2025 20:46:30] "GET /static/js/navbar.js HTTP/1.1" 200 -
+2025-07-22 20:46:30 - INFO - 127.0.0.1 - - [22/Jul/2025 20:46:30] "GET /static/js/local.js HTTP/1.1" 200 -
+2025-07-22 20:46:30 - INFO - 127.0.0.1 - - [22/Jul/2025 20:46:30] "GET /static/css/navbar.css HTTP/1.1" 200 -
+2025-07-22 20:46:30 - INFO - 127.0.0.1 - - [22/Jul/2025 20:46:30] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 20:46:30 - INFO - 127.0.0.1 - - [22/Jul/2025 20:46:30] "GET /static/js/mensagem.js HTTP/1.1" 200 -
+2025-07-22 20:46:30 - INFO - 127.0.0.1 - - [22/Jul/2025 20:46:30] "GET /static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-22 20:46:31 - INFO - 127.0.0.1 - - [22/Jul/2025 20:46:31] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 20:46:31 - INFO - 127.0.0.1 - - [22/Jul/2025 20:46:31] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 20:46:31 - INFO - 127.0.0.1 - - [22/Jul/2025 20:46:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 20:46:58 - INFO - 127.0.0.1 - - [22/Jul/2025 20:46:58] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2025-07-22 20:46:58 - INFO - 127.0.0.1 - - [22/Jul/2025 20:46:58] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 20:47:05 - INFO - 127.0.0.1 - - [22/Jul/2025 20:47:05] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 20:47:05 - INFO - 127.0.0.1 - - [22/Jul/2025 20:47:05] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-22 20:47:05 - INFO - 127.0.0.1 - - [22/Jul/2025 20:47:05] "GET /static/js/navbar.js HTTP/1.1" 200 -
+2025-07-22 20:47:05 - INFO - 127.0.0.1 - - [22/Jul/2025 20:47:05] "GET /static/css/navbar.css HTTP/1.1" 200 -
+2025-07-22 20:47:05 - INFO - 127.0.0.1 - - [22/Jul/2025 20:47:05] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 20:47:05 - INFO - 127.0.0.1 - - [22/Jul/2025 20:47:05] "GET /static/js/local.js HTTP/1.1" 200 -
+2025-07-22 20:47:05 - INFO - 127.0.0.1 - - [22/Jul/2025 20:47:05] "GET /static/js/mensagem.js HTTP/1.1" 200 -
+2025-07-22 20:47:05 - INFO - 127.0.0.1 - - [22/Jul/2025 20:47:05] "GET /static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-22 20:47:06 - INFO - 127.0.0.1 - - [22/Jul/2025 20:47:06] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 20:47:06 - INFO - 127.0.0.1 - - [22/Jul/2025 20:47:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 20:47:06 - INFO - 127.0.0.1 - - [22/Jul/2025 20:47:06] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 20:47:21 - INFO - 127.0.0.1 - - [22/Jul/2025 20:47:21] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2025-07-22 20:47:21 - INFO - 127.0.0.1 - - [22/Jul/2025 20:47:21] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 20:48:33 - INFO - 127.0.0.1 - - [22/Jul/2025 20:48:33] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2025-07-22 20:48:33 - INFO - 127.0.0.1 - - [22/Jul/2025 20:48:33] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 20:48:41 - INFO - 127.0.0.1 - - [22/Jul/2025 20:48:41] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2025-07-22 20:48:41 - INFO - 127.0.0.1 - - [22/Jul/2025 20:48:41] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 20:55:05 - INFO - 127.0.0.1 - - [22/Jul/2025 20:55:05] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 20:55:05 - INFO - 127.0.0.1 - - [22/Jul/2025 20:55:05] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-22 20:55:05 - INFO - 127.0.0.1 - - [22/Jul/2025 20:55:05] "GET /static/css/navbar.css HTTP/1.1" 200 -
+2025-07-22 20:55:05 - INFO - 127.0.0.1 - - [22/Jul/2025 20:55:05] "GET /static/js/navbar.js HTTP/1.1" 200 -
+2025-07-22 20:55:05 - INFO - 127.0.0.1 - - [22/Jul/2025 20:55:05] "GET /static/js/local.js HTTP/1.1" 200 -
+2025-07-22 20:55:05 - INFO - 127.0.0.1 - - [22/Jul/2025 20:55:05] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 20:55:05 - INFO - 127.0.0.1 - - [22/Jul/2025 20:55:05] "GET /static/js/mensagem.js HTTP/1.1" 200 -
+2025-07-22 20:55:05 - INFO - 127.0.0.1 - - [22/Jul/2025 20:55:05] "GET /static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-22 20:55:05 - INFO - 127.0.0.1 - - [22/Jul/2025 20:55:05] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 20:55:05 - INFO - 127.0.0.1 - - [22/Jul/2025 20:55:05] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 20:55:05 - INFO - 127.0.0.1 - - [22/Jul/2025 20:55:05] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 20:55:32 - INFO - 127.0.0.1 - - [22/Jul/2025 20:55:32] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2025-07-22 20:55:32 - INFO - 127.0.0.1 - - [22/Jul/2025 20:55:32] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 20:57:23 - INFO - 127.0.0.1 - - [22/Jul/2025 20:57:23] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 20:57:23 - INFO - 127.0.0.1 - - [22/Jul/2025 20:57:23] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-22 20:57:23 - INFO - 127.0.0.1 - - [22/Jul/2025 20:57:23] "GET /static/css/navbar.css HTTP/1.1" 200 -
+2025-07-22 20:57:23 - INFO - 127.0.0.1 - - [22/Jul/2025 20:57:23] "GET /static/js/navbar.js HTTP/1.1" 200 -
+2025-07-22 20:57:23 - INFO - 127.0.0.1 - - [22/Jul/2025 20:57:23] "GET /static/js/mensagem.js HTTP/1.1" 200 -
+2025-07-22 20:57:23 - INFO - 127.0.0.1 - - [22/Jul/2025 20:57:23] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 20:57:23 - INFO - 127.0.0.1 - - [22/Jul/2025 20:57:23] "GET /static/js/local.js HTTP/1.1" 200 -
+2025-07-22 20:57:23 - INFO - 127.0.0.1 - - [22/Jul/2025 20:57:23] "GET /static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-22 20:57:23 - INFO - 127.0.0.1 - - [22/Jul/2025 20:57:23] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 20:57:23 - INFO - 127.0.0.1 - - [22/Jul/2025 20:57:23] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 20:57:23 - INFO - 127.0.0.1 - - [22/Jul/2025 20:57:23] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 20:57:49 - INFO - 127.0.0.1 - - [22/Jul/2025 20:57:49] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2025-07-22 20:57:50 - INFO - 127.0.0.1 - - [22/Jul/2025 20:57:50] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 20:59:37 - INFO - 127.0.0.1 - - [22/Jul/2025 20:59:37] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 20:59:38 - INFO - 127.0.0.1 - - [22/Jul/2025 20:59:38] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-22 20:59:38 - INFO - 127.0.0.1 - - [22/Jul/2025 20:59:38] "GET /static/css/navbar.css HTTP/1.1" 200 -
+2025-07-22 20:59:38 - INFO - 127.0.0.1 - - [22/Jul/2025 20:59:38] "GET /static/js/navbar.js HTTP/1.1" 200 -
+2025-07-22 20:59:38 - INFO - 127.0.0.1 - - [22/Jul/2025 20:59:38] "GET /static/js/local.js HTTP/1.1" 200 -
+2025-07-22 20:59:38 - INFO - 127.0.0.1 - - [22/Jul/2025 20:59:38] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 20:59:38 - INFO - 127.0.0.1 - - [22/Jul/2025 20:59:38] "GET /static/js/mensagem.js HTTP/1.1" 200 -
+2025-07-22 20:59:38 - INFO - 127.0.0.1 - - [22/Jul/2025 20:59:38] "GET /static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-22 20:59:38 - INFO - 127.0.0.1 - - [22/Jul/2025 20:59:38] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 20:59:38 - INFO - 127.0.0.1 - - [22/Jul/2025 20:59:38] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 20:59:38 - INFO - 127.0.0.1 - - [22/Jul/2025 20:59:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 20:59:59 - DEBUG - Building SSL context
+2025-07-22 20:59:59 - DEBUG - Switching to SSL
+2025-07-22 20:59:59 - DEBUG - SSL has been enabled
+2025-07-22 20:59:59 - DEBUG - Starting authorization phase
+2025-07-22 20:59:59 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-07-22 20:59:59 - DEBUG - Server's response is an auth switch request
+2025-07-22 20:59:59 - DEBUG - Switching to strategy mysql_native_password
+2025-07-22 20:59:59 - DEBUG - # request: b'\x8f\xab\xb3\xe2\x1fRy\x93\xe5\xa62T\xd9\xc1\xae\x89>@q\x82' size: 20
+2025-07-22 20:59:59 - DEBUG - # server response packet: b'\x07\x00\x00\x05\x00\x00\x00\x02\x00\x00\x00'
+2025-07-22 20:59:59 - DEBUG - mysql_native_password completed succesfully
+2025-07-22 20:59:59 - INFO - 127.0.0.1 - - [22/Jul/2025 20:59:59] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2025-07-22 20:59:59 - INFO - 127.0.0.1 - - [22/Jul/2025 20:59:59] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 20:59:59 - INFO - 127.0.0.1 - - [22/Jul/2025 20:59:59] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2025-07-22 20:59:59 - INFO - 127.0.0.1 - - [22/Jul/2025 20:59:59] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 21:00:00 - INFO - 127.0.0.1 - - [22/Jul/2025 21:00:00] "GET /redes HTTP/1.1" 200 -
+2025-07-22 21:00:00 - INFO - 127.0.0.1 - - [22/Jul/2025 21:00:00] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 21:00:00 - INFO - 127.0.0.1 - - [22/Jul/2025 21:00:00] "[36mGET /static/img/FRUTAP.png HTTP/1.1[0m" 304 -
+2025-07-22 21:00:01 - INFO - 127.0.0.1 - - [22/Jul/2025 21:00:01] "GET /sku?cliente_id=2 HTTP/1.1" 200 -
+2025-07-22 21:00:03 - INFO - 127.0.0.1 - - [22/Jul/2025 21:00:03] "POST /buscar_skus HTTP/1.1" 200 -
+2025-07-22 21:00:05 - INFO - 127.0.0.1 - - [22/Jul/2025 21:00:05] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 21:00:05 - INFO - 127.0.0.1 - - [22/Jul/2025 21:00:05] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 21:00:05 - INFO - 127.0.0.1 - - [22/Jul/2025 21:00:05] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 21:00:05 - INFO - 127.0.0.1 - - [22/Jul/2025 21:00:05] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 21:00:05 - INFO - 127.0.0.1 - - [22/Jul/2025 21:00:05] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 21:00:05 - INFO - 127.0.0.1 - - [22/Jul/2025 21:00:05] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-22 21:00:05 - INFO - 127.0.0.1 - - [22/Jul/2025 21:00:05] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-22 21:00:05 - INFO - 127.0.0.1 - - [22/Jul/2025 21:00:05] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 21:00:05 - INFO - 127.0.0.1 - - [22/Jul/2025 21:00:05] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 21:00:05 - INFO - 127.0.0.1 - - [22/Jul/2025 21:00:05] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 21:00:27 - INFO - 127.0.0.1 - - [22/Jul/2025 21:00:27] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2025-07-22 21:00:27 - INFO - 127.0.0.1 - - [22/Jul/2025 21:00:27] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 21:00:27 - INFO - 127.0.0.1 - - [22/Jul/2025 21:00:27] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2025-07-22 21:00:27 - INFO - 127.0.0.1 - - [22/Jul/2025 21:00:27] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 21:00:29 - INFO - 127.0.0.1 - - [22/Jul/2025 21:00:29] "GET /redes HTTP/1.1" 200 -
+2025-07-22 21:00:29 - INFO - 127.0.0.1 - - [22/Jul/2025 21:00:29] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 21:00:29 - INFO - 127.0.0.1 - - [22/Jul/2025 21:00:29] "[36mGET /static/img/FRUTAP.png HTTP/1.1[0m" 304 -
+2025-07-22 21:15:21 - INFO -  * Detected change in 'c:\\Users\\NOTE\\na_gondola\\app\\wsgi.py', reloading
+2025-07-22 21:15:21 - INFO -  * Restarting with stat
+2025-07-22 21:15:22 - WARNING -  * Debugger is active!
+2025-07-22 21:15:22 - INFO -  * Debugger PIN: 794-271-249
+2025-07-22 21:39:30 - DEBUG - Building SSL context
+2025-07-22 21:39:30 - DEBUG - Switching to SSL
+2025-07-22 21:39:30 - DEBUG - SSL has been enabled
+2025-07-22 21:39:30 - DEBUG - Starting authorization phase
+2025-07-22 21:39:30 - DEBUG - The provided initial strategy is caching_sha2_password
+2025-07-22 21:39:30 - INFO - package: mysql.connector.plugins
+2025-07-22 21:39:30 - INFO - plugin_name: caching_sha2_password
+2025-07-22 21:39:30 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-07-22 21:39:30 - DEBUG - Server's response is an auth switch request
+2025-07-22 21:39:30 - DEBUG - Switching to strategy mysql_native_password
+2025-07-22 21:39:30 - INFO - package: mysql.connector.plugins
+2025-07-22 21:39:30 - INFO - plugin_name: mysql_native_password
+2025-07-22 21:39:30 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2025-07-22 21:39:30 - DEBUG - # request: b'\xd0\xa0\x1d\xb0%@\x97\xf5\xdf\x92\xbd\x02\x82\x90\x8e\xc1\xac\xfe\xc8!' size: 20
+2025-07-22 21:39:30 - DEBUG - # server response packet: b'\x07\x00\x00\x05\x00\x00\x00\x02\x00\x00\x00'
+2025-07-22 21:39:30 - DEBUG - mysql_native_password completed succesfully
+2025-07-22 21:39:32 - INFO - 127.0.0.1 - - [22/Jul/2025 21:39:32] "[35m[1mGET /inserir_sku HTTP/1.1[0m" 500 -
+2025-07-22 21:39:32 - INFO - 127.0.0.1 - - [22/Jul/2025 21:39:32] "GET /inserir_sku?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-07-22 21:39:32 - INFO - 127.0.0.1 - - [22/Jul/2025 21:39:32] "GET /inserir_sku?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-07-22 21:39:32 - INFO - 127.0.0.1 - - [22/Jul/2025 21:39:32] "GET /inserir_sku?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-07-22 21:39:32 - INFO - 127.0.0.1 - - [22/Jul/2025 21:39:32] "[36mGET /inserir_sku?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-07-22 21:43:35 - INFO - 127.0.0.1 - - [22/Jul/2025 21:43:35] "[35m[1mGET /inserir_sku HTTP/1.1[0m" 500 -
+2025-07-22 21:43:35 - INFO - 127.0.0.1 - - [22/Jul/2025 21:43:35] "[36mGET /inserir_sku?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-07-22 21:43:35 - INFO - 127.0.0.1 - - [22/Jul/2025 21:43:35] "[36mGET /inserir_sku?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-07-22 21:43:35 - INFO - 127.0.0.1 - - [22/Jul/2025 21:43:35] "[36mGET /inserir_sku?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-07-22 21:43:46 - INFO - 127.0.0.1 - - [22/Jul/2025 21:43:46] "[35m[1mGET /inserir_sku HTTP/1.1[0m" 500 -
+2025-07-22 21:43:46 - INFO - 127.0.0.1 - - [22/Jul/2025 21:43:46] "[36mGET /inserir_sku?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-07-22 21:43:46 - INFO - 127.0.0.1 - - [22/Jul/2025 21:43:46] "[36mGET /inserir_sku?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-07-22 21:43:46 - INFO - 127.0.0.1 - - [22/Jul/2025 21:43:46] "[36mGET /inserir_sku?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-07-22 21:44:25 - INFO - 127.0.0.1 - - [22/Jul/2025 21:44:25] "[35m[1mGET /inserir_sku HTTP/1.1[0m" 500 -
+2025-07-22 21:44:25 - INFO - 127.0.0.1 - - [22/Jul/2025 21:44:25] "[36mGET /inserir_sku?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-07-22 21:44:25 - INFO - 127.0.0.1 - - [22/Jul/2025 21:44:25] "[36mGET /inserir_sku?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-07-22 21:44:25 - INFO - 127.0.0.1 - - [22/Jul/2025 21:44:25] "[36mGET /inserir_sku?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-07-22 21:44:59 - INFO - 127.0.0.1 - - [22/Jul/2025 21:44:59] "GET /inserir_sku HTTP/1.1" 200 -
+2025-07-22 21:46:21 - INFO - 127.0.0.1 - - [22/Jul/2025 21:46:21] "GET /inserir_sku HTTP/1.1" 200 -
+2025-07-22 21:46:25 - INFO - 127.0.0.1 - - [22/Jul/2025 21:46:25] "GET / HTTP/1.1" 200 -
+2025-07-22 21:46:25 - INFO - 127.0.0.1 - - [22/Jul/2025 21:46:25] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+2025-07-22 21:46:25 - INFO - 127.0.0.1 - - [22/Jul/2025 21:46:25] "[36mGET //static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 21:46:25 - INFO - 127.0.0.1 - - [22/Jul/2025 21:46:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 21:46:28 - INFO - 127.0.0.1 - - [22/Jul/2025 21:46:28] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-07-22 21:46:28 - INFO - 127.0.0.1 - - [22/Jul/2025 21:46:28] "GET /redes HTTP/1.1" 200 -
+2025-07-22 21:46:28 - INFO - 127.0.0.1 - - [22/Jul/2025 21:46:28] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 21:46:28 - INFO - 127.0.0.1 - - [22/Jul/2025 21:46:28] "[36mGET /static/img/FRUTAP.png HTTP/1.1[0m" 304 -
+2025-07-22 21:46:29 - INFO - 127.0.0.1 - - [22/Jul/2025 21:46:29] "GET /sku?cliente_id=2 HTTP/1.1" 200 -
+2025-07-22 21:46:30 - INFO - 127.0.0.1 - - [22/Jul/2025 21:46:30] "POST /buscar_skus HTTP/1.1" 200 -
+2025-07-22 21:46:51 - INFO - 127.0.0.1 - - [22/Jul/2025 21:46:51] "[35m[1mPOST /editar_sku/110 HTTP/1.1[0m" 500 -
+2025-07-22 21:46:51 - INFO - 127.0.0.1 - - [22/Jul/2025 21:46:51] "GET /editar_sku/110?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-07-22 21:46:51 - INFO - 127.0.0.1 - - [22/Jul/2025 21:46:51] "GET /editar_sku/110?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-07-22 21:46:51 - INFO - 127.0.0.1 - - [22/Jul/2025 21:46:51] "GET /editar_sku/110?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-07-22 21:46:51 - INFO - 127.0.0.1 - - [22/Jul/2025 21:46:51] "[36mGET /editar_sku/110?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-07-22 21:47:16 - INFO - 127.0.0.1 - - [22/Jul/2025 21:47:16] "[35m[1mPOST /editar_sku/109 HTTP/1.1[0m" 500 -
+2025-07-22 21:47:16 - INFO - 127.0.0.1 - - [22/Jul/2025 21:47:16] "GET /editar_sku/109?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-07-22 21:47:16 - INFO - 127.0.0.1 - - [22/Jul/2025 21:47:16] "GET /editar_sku/109?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-07-22 21:47:16 - INFO - 127.0.0.1 - - [22/Jul/2025 21:47:16] "GET /editar_sku/109?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-07-22 21:47:16 - INFO - 127.0.0.1 - - [22/Jul/2025 21:47:16] "[36mGET /editar_sku/109?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-07-22 21:48:04 - INFO - 127.0.0.1 - - [22/Jul/2025 21:48:04] "[32mPOST /excluir_sku/110 HTTP/1.1[0m" 302 -
+2025-07-22 21:48:06 - INFO - 127.0.0.1 - - [22/Jul/2025 21:48:06] "GET /inserir_sku HTTP/1.1" 200 -
+2025-07-22 21:48:08 - INFO - 127.0.0.1 - - [22/Jul/2025 21:48:08] "GET /sku?cliente_id=2 HTTP/1.1" 200 -
+2025-07-22 21:48:10 - INFO - 127.0.0.1 - - [22/Jul/2025 21:48:10] "POST /buscar_skus HTTP/1.1" 200 -
+2025-07-22 21:48:14 - INFO - 127.0.0.1 - - [22/Jul/2025 21:48:14] "GET /sku?cliente_id=2 HTTP/1.1" 200 -
+2025-07-22 21:48:15 - INFO - 127.0.0.1 - - [22/Jul/2025 21:48:15] "POST /buscar_skus HTTP/1.1" 200 -
+2025-07-22 21:48:31 - INFO - 127.0.0.1 - - [22/Jul/2025 21:48:31] "GET /sku?cliente_id=2 HTTP/1.1" 200 -
+2025-07-22 21:48:31 - INFO - 127.0.0.1 - - [22/Jul/2025 21:48:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 21:48:33 - INFO - 127.0.0.1 - - [22/Jul/2025 21:48:33] "POST /buscar_skus HTTP/1.1" 200 -
+2025-07-22 21:48:59 - INFO - 127.0.0.1 - - [22/Jul/2025 21:48:59] "[35m[1mPOST /editar_sku/109 HTTP/1.1[0m" 500 -
+2025-07-22 21:48:59 - INFO - 127.0.0.1 - - [22/Jul/2025 21:48:59] "[36mGET /editar_sku/109?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-07-22 21:48:59 - INFO - 127.0.0.1 - - [22/Jul/2025 21:48:59] "[36mGET /editar_sku/109?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-07-22 21:48:59 - INFO - 127.0.0.1 - - [22/Jul/2025 21:48:59] "[36mGET /editar_sku/109?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-07-22 21:49:38 - INFO - 127.0.0.1 - - [22/Jul/2025 21:49:38] "[32mPOST /excluir_sku/111 HTTP/1.1[0m" 302 -
+2025-07-22 21:49:40 - INFO - 127.0.0.1 - - [22/Jul/2025 21:49:40] "GET /inserir_sku HTTP/1.1" 200 -
+2025-07-22 21:49:42 - INFO - 127.0.0.1 - - [22/Jul/2025 21:49:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 21:49:44 - INFO - 127.0.0.1 - - [22/Jul/2025 21:49:44] "GET /sku?cliente_id=2 HTTP/1.1" 200 -
+2025-07-22 21:49:46 - INFO - 127.0.0.1 - - [22/Jul/2025 21:49:46] "POST /buscar_skus HTTP/1.1" 200 -
+2025-07-22 21:49:54 - INFO - 127.0.0.1 - - [22/Jul/2025 21:49:54] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 21:49:54 - INFO - 127.0.0.1 - - [22/Jul/2025 21:49:54] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 21:49:54 - INFO - 127.0.0.1 - - [22/Jul/2025 21:49:54] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 21:49:54 - INFO - 127.0.0.1 - - [22/Jul/2025 21:49:54] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 21:49:54 - INFO - 127.0.0.1 - - [22/Jul/2025 21:49:54] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 21:49:54 - INFO - 127.0.0.1 - - [22/Jul/2025 21:49:54] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-22 21:49:54 - INFO - 127.0.0.1 - - [22/Jul/2025 21:49:54] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-22 21:49:54 - INFO - 127.0.0.1 - - [22/Jul/2025 21:49:54] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 21:49:54 - INFO - 127.0.0.1 - - [22/Jul/2025 21:49:54] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 21:49:54 - INFO - 127.0.0.1 - - [22/Jul/2025 21:49:54] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 21:50:02 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:02] "GET /modal_ponto HTTP/1.1" 200 -
+2025-07-22 21:50:02 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:02] "GET /registrar_ponto HTTP/1.1" 200 -
+2025-07-22 21:50:05 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:05] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 21:50:05 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:05] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 21:50:05 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:05] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 21:50:05 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:05] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-22 21:50:05 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:05] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-22 21:50:05 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:05] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 21:50:05 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:05] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 21:50:05 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:05] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 21:50:05 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:05] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 21:50:05 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:05] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 21:50:09 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:09] "GET /nota_fiscal HTTP/1.1" 200 -
+2025-07-22 21:50:09 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:09] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 21:50:09 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:09] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 21:50:09 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:09] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 21:50:12 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:12] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 21:50:12 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:12] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 21:50:12 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:12] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 21:50:12 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:12] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 21:50:12 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:12] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-22 21:50:12 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:12] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-22 21:50:12 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:12] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 21:50:12 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:12] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 21:50:12 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:12] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 21:50:12 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:12] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 21:50:15 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:15] "[32mGET /ver_pdv HTTP/1.1[0m" 302 -
+2025-07-22 21:50:15 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:15] "GET /login HTTP/1.1" 200 -
+2025-07-22 21:50:15 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:15] "GET /static/css/login.css HTTP/1.1" 200 -
+2025-07-22 21:50:15 - INFO - 127.0.0.1 - - [22/Jul/2025 21:50:15] "[36mGET //static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 21:53:39 - INFO - 127.0.0.1 - - [22/Jul/2025 21:53:39] "GET /inserir_sku HTTP/1.1" 200 -
+2025-07-22 21:53:41 - INFO - 127.0.0.1 - - [22/Jul/2025 21:53:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 22:58:49 - INFO - 127.0.0.1 - - [22/Jul/2025 22:58:49] "[32mGET /ver_pdv HTTP/1.1[0m" 302 -
+2025-07-22 22:58:49 - INFO - 127.0.0.1 - - [22/Jul/2025 22:58:49] "GET /login HTTP/1.1" 200 -
+2025-07-22 22:58:49 - INFO - 127.0.0.1 - - [22/Jul/2025 22:58:49] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+2025-07-22 22:58:49 - INFO - 127.0.0.1 - - [22/Jul/2025 22:58:49] "[36mGET //static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 22:59:09 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-22 22:59:09 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-22 22:59:09 - INFO -  * Restarting with stat
+2025-07-22 22:59:10 - WARNING -  * Debugger is active!
+2025-07-22 22:59:10 - INFO -  * Debugger PIN: 794-271-249
+2025-07-22 22:59:14 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:14] "GET /login HTTP/1.1" 200 -
+2025-07-22 22:59:15 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:15] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+2025-07-22 22:59:15 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:15] "[36mGET //static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 22:59:17 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:17] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-07-22 22:59:17 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:17] "GET /ver_pdv HTTP/1.1" 200 -
+2025-07-22 22:59:17 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:17] "[36mGET /static/css/ver_pdv.css HTTP/1.1[0m" 304 -
+2025-07-22 22:59:17 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:17] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 22:59:17 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:17] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 22:59:17 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:17] "[36mGET /static/js/ver_pdv.js HTTP/1.1[0m" 304 -
+2025-07-22 22:59:17 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:17] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 22:59:28 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:28] "GET /ver_pdv HTTP/1.1" 200 -
+2025-07-22 22:59:28 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:28] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 22:59:28 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:28] "[36mGET /static/js/ver_pdv.js HTTP/1.1[0m" 304 -
+2025-07-22 22:59:28 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:28] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 22:59:28 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:28] "GET /static/css/ver_pdv.css HTTP/1.1" 200 -
+2025-07-22 22:59:28 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:28] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 22:59:32 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:32] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 22:59:32 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:32] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 22:59:32 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:32] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 22:59:32 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:32] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 22:59:33 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:33] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-22 22:59:33 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:33] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 22:59:33 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:33] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-22 22:59:33 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:33] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 22:59:33 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:33] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 22:59:35 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:35] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-07-22 22:59:35 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:35] "GET /login HTTP/1.1" 200 -
+2025-07-22 22:59:35 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:35] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+2025-07-22 22:59:35 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:35] "[36mGET //static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 22:59:37 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:37] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-07-22 22:59:38 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:38] "GET /redes HTTP/1.1" 200 -
+2025-07-22 22:59:38 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:38] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-22 22:59:38 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:38] "[36mGET /static/img/FRUTAP.png HTTP/1.1[0m" 304 -
+2025-07-22 22:59:38 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:38] "GET /sku?cliente_id=2 HTTP/1.1" 200 -
+2025-07-22 22:59:40 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:40] "POST /buscar_skus HTTP/1.1" 200 -
+2025-07-22 22:59:41 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:41] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 22:59:41 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:41] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 22:59:41 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:41] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 22:59:41 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:41] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-22 22:59:41 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:41] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-22 22:59:41 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:41] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 22:59:41 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:41] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 22:59:41 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:41] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 22:59:41 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 22:59:41 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:41] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 22:59:57 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:57] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2025-07-22 22:59:57 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:57] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 22:59:57 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:57] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2025-07-22 22:59:57 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:57] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 22:59:58 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:58] "GET /redes HTTP/1.1" 200 -
+2025-07-22 22:59:58 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:58] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 22:59:58 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:58] "[36mGET /static/img/FRUTAP.png HTTP/1.1[0m" 304 -
+2025-07-22 22:59:59 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:59] "[32mGET /ver_pdv HTTP/1.1[0m" 302 -
+2025-07-22 22:59:59 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:59] "GET /login HTTP/1.1" 200 -
+2025-07-22 22:59:59 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:59] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+2025-07-22 22:59:59 - INFO - 127.0.0.1 - - [22/Jul/2025 22:59:59] "[36mGET //static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 23:00:02 - INFO - 127.0.0.1 - - [22/Jul/2025 23:00:02] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-07-22 23:00:02 - INFO - 127.0.0.1 - - [22/Jul/2025 23:00:02] "GET /ver_pdv HTTP/1.1" 200 -
+2025-07-22 23:00:02 - INFO - 127.0.0.1 - - [22/Jul/2025 23:00:02] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 23:00:02 - INFO - 127.0.0.1 - - [22/Jul/2025 23:00:02] "[36mGET /static/js/ver_pdv.js HTTP/1.1[0m" 304 -
+2025-07-22 23:00:02 - INFO - 127.0.0.1 - - [22/Jul/2025 23:00:02] "[36mGET /static/css/ver_pdv.css HTTP/1.1[0m" 304 -
+2025-07-22 23:00:02 - INFO - 127.0.0.1 - - [22/Jul/2025 23:00:02] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 23:00:02 - INFO - 127.0.0.1 - - [22/Jul/2025 23:00:02] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 23:08:19 - INFO -  * Detected change in 'c:\\Users\\NOTE\\na_gondola\\app\\routes\\pdv.py', reloading
+2025-07-22 23:08:19 - INFO -  * Restarting with stat
+2025-07-22 23:08:20 - WARNING -  * Debugger is active!
+2025-07-22 23:08:20 - INFO -  * Debugger PIN: 794-271-249
+2025-07-22 23:13:07 - INFO -  * Detected change in 'c:\\Users\\NOTE\\na_gondola\\app\\routes\\pdv.py', reloading
+2025-07-22 23:13:07 - INFO -  * Restarting with stat
+2025-07-22 23:13:08 - WARNING -  * Debugger is active!
+2025-07-22 23:13:08 - INFO -  * Debugger PIN: 794-271-249
+2025-07-22 23:13:17 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:17] "GET /redes HTTP/1.1" 200 -
+2025-07-22 23:13:17 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:17] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-22 23:13:17 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 23:13:21 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:21] "GET / HTTP/1.1" 200 -
+2025-07-22 23:13:21 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:21] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+2025-07-22 23:13:21 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:21] "[36mGET //static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 23:13:23 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:23] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-07-22 23:13:23 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:23] "GET /redes HTTP/1.1" 200 -
+2025-07-22 23:13:23 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:23] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 23:13:23 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:23] "[36mGET /static/img/FRUTAP.png HTTP/1.1[0m" 304 -
+2025-07-22 23:13:24 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:24] "GET /sku?cliente_id=2 HTTP/1.1" 200 -
+2025-07-22 23:13:25 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:25] "POST /buscar_skus HTTP/1.1" 200 -
+2025-07-22 23:13:29 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:29] "[32mGET /ver_pdv HTTP/1.1[0m" 302 -
+2025-07-22 23:13:29 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:29] "GET /login HTTP/1.1" 200 -
+2025-07-22 23:13:29 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:29] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+2025-07-22 23:13:29 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:29] "[36mGET //static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 23:13:38 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:38] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 23:13:38 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:38] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-22 23:13:38 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:38] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 23:13:38 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:38] "GET /static/css/navbar.css HTTP/1.1" 200 -
+2025-07-22 23:13:38 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:38] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 23:13:38 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:38] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-22 23:13:38 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:38] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-22 23:13:38 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:38] "GET /static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-22 23:13:38 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:38] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 23:13:54 - INFO - 127.0.0.1 - - [22/Jul/2025 23:13:54] "[35m[1mPOST /submit HTTP/1.1[0m" 500 -
+2025-07-22 23:14:43 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-22 23:14:43 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-22 23:14:43 - INFO -  * Restarting with stat
+2025-07-22 23:14:44 - WARNING -  * Debugger is active!
+2025-07-22 23:14:44 - INFO -  * Debugger PIN: 794-271-249
+2025-07-22 23:14:50 - INFO - 127.0.0.1 - - [22/Jul/2025 23:14:50] "[35m[1mPOST /submit HTTP/1.1[0m" 500 -
+2025-07-22 23:15:07 - INFO - 127.0.0.1 - - [22/Jul/2025 23:15:07] "GET / HTTP/1.1" 200 -
+2025-07-22 23:15:07 - INFO - 127.0.0.1 - - [22/Jul/2025 23:15:07] "GET /static/css/login.css HTTP/1.1" 200 -
+2025-07-22 23:15:07 - INFO - 127.0.0.1 - - [22/Jul/2025 23:15:07] "GET //static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-22 23:16:57 - INFO -  * Detected change in 'c:\\Users\\NOTE\\na_gondola\\app\\routes\\pdv.py', reloading
+2025-07-22 23:16:57 - INFO -  * Restarting with stat
+2025-07-22 23:16:58 - WARNING -  * Debugger is active!
+2025-07-22 23:16:58 - INFO -  * Debugger PIN: 794-271-249
+2025-07-22 23:17:14 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-22 23:17:14 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-22 23:17:14 - INFO -  * Restarting with stat
+2025-07-22 23:17:15 - WARNING -  * Debugger is active!
+2025-07-22 23:17:15 - INFO -  * Debugger PIN: 794-271-249
+2025-07-22 23:17:24 - INFO - 127.0.0.1 - - [22/Jul/2025 23:17:24] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2025-07-22 23:17:24 - INFO - 127.0.0.1 - - [22/Jul/2025 23:17:24] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 23:17:25 - INFO - 127.0.0.1 - - [22/Jul/2025 23:17:25] "GET /redes HTTP/1.1" 200 -
+2025-07-22 23:17:25 - INFO - 127.0.0.1 - - [22/Jul/2025 23:17:25] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 23:17:25 - INFO - 127.0.0.1 - - [22/Jul/2025 23:17:25] "[36mGET /static/img/FRUTAP.png HTTP/1.1[0m" 304 -
+2025-07-22 23:17:46 - INFO - 127.0.0.1 - - [22/Jul/2025 23:17:46] "GET /sku?cliente_id=2 HTTP/1.1" 200 -
+2025-07-22 23:17:48 - INFO - 127.0.0.1 - - [22/Jul/2025 23:17:48] "POST /buscar_skus HTTP/1.1" 200 -
+2025-07-22 23:17:49 - INFO - 127.0.0.1 - - [22/Jul/2025 23:17:49] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 23:17:49 - INFO - 127.0.0.1 - - [22/Jul/2025 23:17:49] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-22 23:17:49 - INFO - 127.0.0.1 - - [22/Jul/2025 23:17:49] "GET /static/css/navbar.css HTTP/1.1" 200 -
+2025-07-22 23:17:49 - INFO - 127.0.0.1 - - [22/Jul/2025 23:17:49] "GET /static/js/navbar.js HTTP/1.1" 200 -
+2025-07-22 23:17:49 - INFO - 127.0.0.1 - - [22/Jul/2025 23:17:49] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-22 23:17:49 - INFO - 127.0.0.1 - - [22/Jul/2025 23:17:49] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-22 23:17:49 - INFO - 127.0.0.1 - - [22/Jul/2025 23:17:49] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-22 23:17:49 - INFO - 127.0.0.1 - - [22/Jul/2025 23:17:49] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 23:17:49 - INFO - 127.0.0.1 - - [22/Jul/2025 23:17:49] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 23:18:18 - INFO - 127.0.0.1 - - [22/Jul/2025 23:18:18] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2025-07-22 23:18:18 - INFO - 127.0.0.1 - - [22/Jul/2025 23:18:18] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 23:18:20 - INFO - 127.0.0.1 - - [22/Jul/2025 23:18:20] "GET /redes HTTP/1.1" 200 -
+2025-07-22 23:18:20 - INFO - 127.0.0.1 - - [22/Jul/2025 23:18:20] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 23:18:20 - INFO - 127.0.0.1 - - [22/Jul/2025 23:18:20] "[36mGET /static/img/FRUTAP.png HTTP/1.1[0m" 304 -
+2025-07-22 23:18:29 - INFO - 127.0.0.1 - - [22/Jul/2025 23:18:29] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-07-22 23:18:29 - INFO - 127.0.0.1 - - [22/Jul/2025 23:18:29] "GET /ver_pdv HTTP/1.1" 200 -
+2025-07-22 23:18:29 - INFO - 127.0.0.1 - - [22/Jul/2025 23:18:29] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 23:18:29 - INFO - 127.0.0.1 - - [22/Jul/2025 23:18:29] "[36mGET /static/css/ver_pdv.css HTTP/1.1[0m" 304 -
+2025-07-22 23:18:29 - INFO - 127.0.0.1 - - [22/Jul/2025 23:18:29] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 23:18:29 - INFO - 127.0.0.1 - - [22/Jul/2025 23:18:29] "[36mGET /static/js/ver_pdv.js HTTP/1.1[0m" 304 -
+2025-07-22 23:18:29 - INFO - 127.0.0.1 - - [22/Jul/2025 23:18:29] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 23:19:02 - INFO -  * Detected change in 'c:\\Users\\NOTE\\na_gondola\\app\\routes\\pdv.py', reloading
+2025-07-22 23:19:02 - INFO -  * Restarting with stat
+2025-07-22 23:19:03 - WARNING -  * Debugger is active!
+2025-07-22 23:19:03 - INFO -  * Debugger PIN: 794-271-249
+2025-07-22 23:19:17 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:17] "GET /redes HTTP/1.1" 200 -
+2025-07-22 23:19:17 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:17] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-22 23:19:17 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 23:19:21 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:21] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-07-22 23:19:21 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:21] "GET /login HTTP/1.1" 200 -
+2025-07-22 23:19:21 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:21] "GET /static/css/login.css HTTP/1.1" 200 -
+2025-07-22 23:19:21 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:21] "GET //static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-22 23:19:23 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:23] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-07-22 23:19:23 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:23] "GET /redes HTTP/1.1" 200 -
+2025-07-22 23:19:23 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:23] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-22 23:19:23 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:23] "[36mGET /static/img/FRUTAP.png HTTP/1.1[0m" 304 -
+2025-07-22 23:19:24 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:24] "GET /sku?cliente_id=2 HTTP/1.1" 200 -
+2025-07-22 23:19:26 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:26] "POST /buscar_skus HTTP/1.1" 200 -
+2025-07-22 23:19:28 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:28] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 23:19:28 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:28] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-22 23:19:28 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:28] "GET /static/css/navbar.css HTTP/1.1" 200 -
+2025-07-22 23:19:28 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:28] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 23:19:28 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:28] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 23:19:28 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:28] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-22 23:19:28 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:28] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 23:19:28 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:28] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-22 23:19:28 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:28] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 23:19:40 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:40] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2025-07-22 23:19:40 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:40] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 23:19:42 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:42] "GET /redes HTTP/1.1" 200 -
+2025-07-22 23:19:42 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:42] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 23:19:42 - INFO - 127.0.0.1 - - [22/Jul/2025 23:19:42] "[36mGET /static/img/FRUTAP.png HTTP/1.1[0m" 304 -
+2025-07-22 23:20:34 - INFO - 127.0.0.1 - - [22/Jul/2025 23:20:34] "GET /redes HTTP/1.1" 200 -
+2025-07-22 23:20:34 - INFO - 127.0.0.1 - - [22/Jul/2025 23:20:34] "GET /static/css/pdv_estoque.css HTTP/1.1" 200 -
+2025-07-22 23:20:34 - INFO - 127.0.0.1 - - [22/Jul/2025 23:20:34] "GET /static/img/FRUTAP.png HTTP/1.1" 200 -
+2025-07-22 23:20:34 - INFO - 127.0.0.1 - - [22/Jul/2025 23:20:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 23:20:36 - INFO - 127.0.0.1 - - [22/Jul/2025 23:20:36] "GET /sku?cliente_id=2 HTTP/1.1" 200 -
+2025-07-22 23:20:38 - INFO - 127.0.0.1 - - [22/Jul/2025 23:20:38] "POST /buscar_skus HTTP/1.1" 200 -
+2025-07-22 23:20:39 - INFO - 127.0.0.1 - - [22/Jul/2025 23:20:39] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 23:20:39 - INFO - 127.0.0.1 - - [22/Jul/2025 23:20:39] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 23:20:39 - INFO - 127.0.0.1 - - [22/Jul/2025 23:20:39] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 23:20:39 - INFO - 127.0.0.1 - - [22/Jul/2025 23:20:39] "[36mGET /static/js/pdv_estoque.js HTTP/1.1[0m" 304 -
+2025-07-22 23:20:40 - INFO - 127.0.0.1 - - [22/Jul/2025 23:20:40] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 23:20:40 - INFO - 127.0.0.1 - - [22/Jul/2025 23:20:40] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-22 23:20:40 - INFO - 127.0.0.1 - - [22/Jul/2025 23:20:40] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 23:20:40 - INFO - 127.0.0.1 - - [22/Jul/2025 23:20:40] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-22 23:20:40 - INFO - 127.0.0.1 - - [22/Jul/2025 23:20:40] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-22 23:21:17 - INFO - 127.0.0.1 - - [22/Jul/2025 23:21:17] "[32mPOST /submit HTTP/1.1[0m" 302 -
+2025-07-22 23:21:17 - INFO - 127.0.0.1 - - [22/Jul/2025 23:21:17] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-22 23:21:24 - INFO - 127.0.0.1 - - [22/Jul/2025 23:21:24] "GET /redes HTTP/1.1" 200 -
+2025-07-22 23:21:24 - INFO - 127.0.0.1 - - [22/Jul/2025 23:21:24] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-22 23:21:24 - INFO - 127.0.0.1 - - [22/Jul/2025 23:21:24] "[36mGET /static/img/FRUTAP.png HTTP/1.1[0m" 304 -
+2025-07-22 23:21:30 - INFO - 127.0.0.1 - - [22/Jul/2025 23:21:30] "[32mGET /ver_pdv HTTP/1.1[0m" 302 -
+2025-07-22 23:21:30 - INFO - 127.0.0.1 - - [22/Jul/2025 23:21:30] "GET /login HTTP/1.1" 200 -
+2025-07-22 23:21:30 - INFO - 127.0.0.1 - - [22/Jul/2025 23:21:30] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+2025-07-22 23:21:30 - INFO - 127.0.0.1 - - [22/Jul/2025 23:21:30] "[36mGET //static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 23:21:32 - INFO - 127.0.0.1 - - [22/Jul/2025 23:21:32] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-07-22 23:21:32 - INFO - 127.0.0.1 - - [22/Jul/2025 23:21:32] "GET /ver_pdv HTTP/1.1" 200 -
+2025-07-22 23:21:32 - INFO - 127.0.0.1 - - [22/Jul/2025 23:21:32] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-22 23:21:32 - INFO - 127.0.0.1 - - [22/Jul/2025 23:21:32] "[36mGET /static/css/ver_pdv.css HTTP/1.1[0m" 304 -
+2025-07-22 23:21:32 - INFO - 127.0.0.1 - - [22/Jul/2025 23:21:32] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-22 23:21:32 - INFO - 127.0.0.1 - - [22/Jul/2025 23:21:32] "[36mGET /static/js/ver_pdv.js HTTP/1.1[0m" 304 -
+2025-07-22 23:21:32 - INFO - 127.0.0.1 - - [22/Jul/2025 23:21:32] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-22 23:21:38 - INFO - 127.0.0.1 - - [22/Jul/2025 23:21:38] "GET /get_vencimentos?id_pdv=228 HTTP/1.1" 200 -
+2025-07-22 23:21:40 - INFO - 127.0.0.1 - - [22/Jul/2025 23:21:40] "GET /get_photos/228 HTTP/1.1" 200 -
+2025-07-22 23:21:40 - INFO - 127.0.0.1 - - [22/Jul/2025 23:21:40] "GET /imagem_base64_nova/143 HTTP/1.1" 200 -
+2025-07-22 23:21:40 - INFO - 127.0.0.1 - - [22/Jul/2025 23:21:40] "GET /imagem_base64_nova/144 HTTP/1.1" 200 -
+2025-07-22 23:21:40 - INFO - 127.0.0.1 - - [22/Jul/2025 23:21:40] "GET /imagem_base64_nova/145 HTTP/1.1" 200 -
+2025-07-23 00:17:11 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-23 00:17:11 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-23 00:17:11 - INFO -  * Restarting with stat
+2025-07-23 00:17:12 - WARNING -  * Debugger is active!
+2025-07-23 00:17:12 - INFO -  * Debugger PIN: 794-271-249
+2025-07-23 00:17:13 - INFO - 127.0.0.1 - - [23/Jul/2025 00:17:13] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-07-23 00:17:13 - INFO - 127.0.0.1 - - [23/Jul/2025 00:17:13] "GET /login HTTP/1.1" 200 -
+2025-07-23 00:17:13 - INFO - 127.0.0.1 - - [23/Jul/2025 00:17:13] "GET /static/css/login.css HTTP/1.1" 200 -
+2025-07-23 00:17:13 - INFO - 127.0.0.1 - - [23/Jul/2025 00:17:13] "GET //static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-23 00:17:16 - INFO - 127.0.0.1 - - [23/Jul/2025 00:17:16] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-07-23 00:17:16 - INFO - 127.0.0.1 - - [23/Jul/2025 00:17:16] "GET /redes HTTP/1.1" 200 -
+2025-07-23 00:17:16 - INFO - 127.0.0.1 - - [23/Jul/2025 00:17:16] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-23 00:17:16 - INFO - 127.0.0.1 - - [23/Jul/2025 00:17:16] "[36mGET /static/img/FRUTAP.png HTTP/1.1[0m" 304 -
+2025-07-23 00:17:17 - INFO - 127.0.0.1 - - [23/Jul/2025 00:17:17] "GET /sku?cliente_id=2 HTTP/1.1" 200 -
+2025-07-23 00:17:18 - INFO - 127.0.0.1 - - [23/Jul/2025 00:17:18] "POST /buscar_skus HTTP/1.1" 200 -
+2025-07-23 00:17:20 - INFO - 127.0.0.1 - - [23/Jul/2025 00:17:20] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-23 00:17:20 - INFO - 127.0.0.1 - - [23/Jul/2025 00:17:20] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-23 00:17:20 - INFO - 127.0.0.1 - - [23/Jul/2025 00:17:20] "GET /static/css/navbar.css HTTP/1.1" 200 -
+2025-07-23 00:17:20 - INFO - 127.0.0.1 - - [23/Jul/2025 00:17:20] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-23 00:17:20 - INFO - 127.0.0.1 - - [23/Jul/2025 00:17:20] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-23 00:17:20 - INFO - 127.0.0.1 - - [23/Jul/2025 00:17:20] "GET /static/js/navbar.js HTTP/1.1" 200 -
+2025-07-23 00:17:20 - INFO - 127.0.0.1 - - [23/Jul/2025 00:17:20] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-23 00:17:20 - INFO - 127.0.0.1 - - [23/Jul/2025 00:17:20] "GET /static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-23 00:17:20 - INFO - 127.0.0.1 - - [23/Jul/2025 00:17:20] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-23 00:19:31 - INFO - 127.0.0.1 - - [23/Jul/2025 00:19:31] "GET /pdv_estoque HTTP/1.1" 200 -
+2025-07-23 00:19:31 - INFO - 127.0.0.1 - - [23/Jul/2025 00:19:31] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-23 00:19:32 - INFO - 127.0.0.1 - - [23/Jul/2025 00:19:32] "GET /static/js/pdv_estoque.js HTTP/1.1" 200 -
+2025-07-23 00:19:32 - INFO - 127.0.0.1 - - [23/Jul/2025 00:19:32] "[36mGET /static/js/local.js HTTP/1.1[0m" 304 -
+2025-07-23 00:19:32 - INFO - 127.0.0.1 - - [23/Jul/2025 00:19:32] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-23 00:19:32 - INFO - 127.0.0.1 - - [23/Jul/2025 00:19:32] "[36mGET /static/js/mensagem.js HTTP/1.1[0m" 304 -
+2025-07-23 00:19:32 - INFO - 127.0.0.1 - - [23/Jul/2025 00:19:32] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-23 00:19:32 - INFO - 127.0.0.1 - - [23/Jul/2025 00:19:32] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-23 00:19:32 - INFO - 127.0.0.1 - - [23/Jul/2025 00:19:32] "[33mGET /static/mensagem.txt HTTP/1.1[0m" 404 -
+2025-07-23 00:20:14 - INFO - 127.0.0.1 - - [23/Jul/2025 00:20:14] "[32mGET /ver_pdv HTTP/1.1[0m" 302 -
+2025-07-23 00:20:14 - INFO - 127.0.0.1 - - [23/Jul/2025 00:20:14] "GET /login HTTP/1.1" 200 -
+2025-07-23 00:20:14 - INFO - 127.0.0.1 - - [23/Jul/2025 00:20:14] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+2025-07-23 00:20:14 - INFO - 127.0.0.1 - - [23/Jul/2025 00:20:14] "[36mGET //static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-23 00:20:16 - INFO - 127.0.0.1 - - [23/Jul/2025 00:20:16] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-07-23 00:20:16 - INFO - 127.0.0.1 - - [23/Jul/2025 00:20:16] "GET /ver_pdv HTTP/1.1" 200 -
+2025-07-23 00:20:16 - INFO - 127.0.0.1 - - [23/Jul/2025 00:20:16] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-23 00:20:16 - INFO - 127.0.0.1 - - [23/Jul/2025 00:20:16] "[36mGET /static/css/ver_pdv.css HTTP/1.1[0m" 304 -
+2025-07-23 00:20:16 - INFO - 127.0.0.1 - - [23/Jul/2025 00:20:16] "[36mGET /static/css/navbar.css HTTP/1.1[0m" 304 -
+2025-07-23 00:20:16 - INFO - 127.0.0.1 - - [23/Jul/2025 00:20:16] "[36mGET /static/js/ver_pdv.js HTTP/1.1[0m" 304 -
+2025-07-23 00:20:16 - INFO - 127.0.0.1 - - [23/Jul/2025 00:20:16] "[36mGET /static/img/logo_nagondola.png HTTP/1.1[0m" 304 -
+2025-07-23 00:20:19 - INFO - 127.0.0.1 - - [23/Jul/2025 00:20:19] "GET /get_photos/228 HTTP/1.1" 200 -
+2025-07-23 00:20:19 - INFO - 127.0.0.1 - - [23/Jul/2025 00:20:19] "GET /imagem_base64_nova/143 HTTP/1.1" 200 -
+2025-07-23 00:20:19 - INFO - 127.0.0.1 - - [23/Jul/2025 00:20:19] "GET /imagem_base64_nova/144 HTTP/1.1" 200 -
+2025-07-23 00:20:19 - INFO - 127.0.0.1 - - [23/Jul/2025 00:20:19] "GET /imagem_base64_nova/145 HTTP/1.1" 200 -
+2025-07-23 00:20:26 - INFO - 127.0.0.1 - - [23/Jul/2025 00:20:26] "GET /nota_fiscal HTTP/1.1" 200 -
+2025-07-23 00:20:26 - INFO - 127.0.0.1 - - [23/Jul/2025 00:20:26] "[36mGET /static/js/navbar.js HTTP/1.1[0m" 304 -
+2025-07-23 00:20:26 - INFO - 127.0.0.1 - - [23/Jul/2025 00:20:26] "GET /static/css/navbar.css HTTP/1.1" 200 -
+2025-07-23 00:20:26 - INFO - 127.0.0.1 - - [23/Jul/2025 00:20:26] "GET /static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-23 00:21:33 - INFO - 127.0.0.1 - - [23/Jul/2025 00:21:33] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-07-23 00:21:33 - INFO - 127.0.0.1 - - [23/Jul/2025 00:21:33] "GET /login HTTP/1.1" 200 -
+2025-07-23 00:21:33 - INFO - 127.0.0.1 - - [23/Jul/2025 00:21:33] "GET /static/css/login.css HTTP/1.1" 200 -
+2025-07-23 00:21:33 - INFO - 127.0.0.1 - - [23/Jul/2025 00:21:33] "GET //static/img/logo_nagondola.png HTTP/1.1" 200 -
+2025-07-23 00:21:35 - INFO - 127.0.0.1 - - [23/Jul/2025 00:21:35] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-07-23 00:21:35 - INFO - 127.0.0.1 - - [23/Jul/2025 00:21:35] "GET /redes HTTP/1.1" 200 -
+2025-07-23 00:21:35 - INFO - 127.0.0.1 - - [23/Jul/2025 00:21:35] "[36mGET /static/css/pdv_estoque.css HTTP/1.1[0m" 304 -
+2025-07-23 00:21:35 - INFO - 127.0.0.1 - - [23/Jul/2025 00:21:35] "[36mGET /static/img/FRUTAP.png HTTP/1.1[0m" 304 -
+2025-07-23 00:21:36 - INFO - 127.0.0.1 - - [23/Jul/2025 00:21:36] "GET /sku?cliente_id=2 HTTP/1.1" 200 -
+2025-07-23 00:21:37 - INFO - 127.0.0.1 - - [23/Jul/2025 00:21:37] "POST /buscar_skus HTTP/1.1" 200 -
+2025-07-23 00:21:49 - INFO - 127.0.0.1 - - [23/Jul/2025 00:21:49] "GET /sku?cliente_id=2 HTTP/1.1" 200 -
+2025-07-23 00:21:51 - INFO - 127.0.0.1 - - [23/Jul/2025 00:21:51] "POST /buscar_skus HTTP/1.1" 200 -
+2025-07-23 00:38:55 - INFO -  * Detected change in 'c:\\Users\\NOTE\\na_gondola\\app\\routes\\inicio.py', reloading
+2025-07-23 00:38:55 - INFO -  * Restarting with stat
+2025-07-23 00:38:56 - WARNING -  * Debugger is active!
+2025-07-23 00:38:56 - INFO -  * Debugger PIN: 794-271-249
+2025-07-23 00:39:00 - INFO - 127.0.0.1 - - [23/Jul/2025 00:39:00] "[33mGET /inicio HTTP/1.1[0m" 404 -
+2025-07-23 00:39:06 - INFO - 127.0.0.1 - - [23/Jul/2025 00:39:06] "[33mGET /inicio.html HTTP/1.1[0m" 404 -
+2025-07-23 00:40:47 - INFO -  * Detected change in 'c:\\Users\\NOTE\\na_gondola\\app\\__init__.py', reloading
+2025-07-23 00:40:47 - INFO -  * Restarting with stat
+2025-07-23 00:43:59 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-23 00:43:59 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-23 00:43:59 - INFO -  * Restarting with stat
+2025-07-23 00:44:00 - WARNING -  * Debugger is active!
+2025-07-23 00:44:00 - INFO -  * Debugger PIN: 794-271-249
+2025-07-23 00:44:01 - INFO - 127.0.0.1 - - [23/Jul/2025 00:44:01] "GET /inicio HTTP/1.1" 200 -

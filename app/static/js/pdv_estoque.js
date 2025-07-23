@@ -364,40 +364,63 @@ $(document).ready(async function () {
     restaurarDadosFormulario();
 
     // Envio do formulário
-    $("#submit-form").submit(function (event) {
-        event.preventDefault();
-        if (appState.envioEmAndamento) return;
+    $(document).ready(function () {
+        // Controle de envio
+        let isSubmitting = false;
 
-        appState.envioEmAndamento = true;
-        $("#loading").removeClass('d-none');
-        $("#enviarBotao").prop("disabled", true);
-        $("#mensagem-envio").addClass('d-none').removeClass('alert-success alert-danger').text('');
+        // Handler único para o formulário
+        $('#submit-form').off('submit').on('submit', async function (e) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
 
-        const formData = new FormData(this);
-        appendFilesAndDatesToFormData(formData);
+            if (isSubmitting) return;
+            isSubmitting = true;
 
-        $.ajax({
-            url: "/submit",
-            type: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false,
-            success: () => {
-                $("#mensagem-envio")
-                    .removeClass('d-none alert-danger')
-                    .addClass('alert-success')
-                    .text("Dados enviados com sucesso!");
-            },
-            error: () => {
-                $("#mensagem-envio")
-                    .removeClass('d-none alert-success')
-                    .addClass('alert-danger')
-                    .text("Ocorreu um erro ao enviar os dados.");
-            },
-            complete: () => {
-                $("#loading").addClass('d-none');
-                $("#enviarBotao").prop("disabled", false);
-                appState.envioEmAndamento = false;
+            // UI Feedback
+            const $btn = $('#enviarBotao');
+            const $loading = $('#loading');
+            $btn.prop('disabled', true);
+            $loading.removeClass('d-none');
+
+            try {
+                // Prepara FormData
+                const formData = new FormData(this);
+
+                // Adiciona fotos dinamicamente
+                fotosData.forEach((foto, index) => {
+                    formData.append('file[]', foto.file);
+                    formData.append('tipo_foto[]', foto.tipo);
+                });
+
+                // Envio
+                const response = await fetch('/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) throw new Error(response.statusText);
+
+                // Sucesso - limpeza
+                fotosData = [];
+                this.reset();
+                localStorage.removeItem('formData');
+
+                // Mostra modal e redireciona
+                const modal = new bootstrap.Modal('#modalSucesso');
+                modal.show();
+
+                $('#modalSucesso').off('hidden.bs.modal').on('hidden.bs.modal', () => {
+                    window.location.href = '/redes';
+                });
+
+            } catch (error) {
+                console.error('Erro:', error);
+                alert('Falha no envio. Tente novamente.');
+            } finally {
+                // Cleanup
+                isSubmitting = false;
+                $btn.prop('disabled', false);
+                $loading.addClass('d-none');
             }
         });
     });
@@ -559,9 +582,3 @@ function escolherTipoFoto(tipo) {
     };
     inputFile.click();
 }
-
-// No submit
-document.getElementById('submit-form').addEventListener('submit', function (e) {
-    fotosData.forEach(foto => this.appendChild(foto.fileInput));
-});
-document.addEventListener('DOMContentLoaded', () => renderFotoQuadrados());

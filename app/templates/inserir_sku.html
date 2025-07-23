@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Inserir SKU</h2>
-    <form action="{{ url_for('inserir_sku') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ url_for('sku.inserir_sku') }}" method="post" enctype="multipart/form-data">
         <label for="cliente_id">ID do Cliente:</label>
         <input type="text" id="cliente_id" name="cliente_id" required><br><br>
 
@@ -26,10 +26,10 @@
             <li>
                 <img src="data:image/png;base64,{{ sku.foto }}" alt="{{ sku.descricao }}" width="100">
                 <p>{{ sku.descricao }}</p>
-                <form action="{{ url_for('editar_sku', id=sku.id) }}" method="post">
+                <form action="{{ url_for('sku.editar_sku', id=sku.id) }}" method="post">
                     <input type="submit" value="Editar">
                 </form>
-                <form action="{{ url_for('excluir_sku', id=sku.id) }}" method="post">
+                <form action="{{ url_for('sku.excluir_sku', id=sku.id) }}" method="post">
                     <input type="submit" value="Excluir">
                 </form>
             </li>
