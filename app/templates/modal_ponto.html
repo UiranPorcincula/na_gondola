@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Ponto</title>
+    <!-- Bootstrap CSS + Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <style>
+        .btn-ponto {
+            padding: 0.35rem 0.7rem;
+            font-size: 0.85rem;
+            margin: 0.15rem;
+        }
+        @media (max-width: 768px) {
+            .btn-ponto {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+            .btn-group-vertical {
+                width: 100%;
+            }
+        }
+        .loading-spinner {
+            display: none;
+            width: 1rem;
+            height: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+<div class="container py-4">
+    <!-- Cabeçalho com Botão Voltar -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h4 mb-0">Registro de Ponto</h1>
+        <a href="/pdv_estoque" class="btn btn-sm btn-outline-secondary">
+            <i class="bi bi-arrow-left"></i> Voltar
+        </a>
+    </div>
+
+    <!-- Botões de Registro -->
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-8">
+            <div class="d-flex flex-wrap justify-content-center" id="botoesPonto">
+                <form id="entradaForm" class="mx-1 mb-2">
+                    <input type="hidden" name="acao" value="entrada">
+                    <button type="submit" class="btn btn-ponto btn-primary">
+                        <span class="loading-spinner spinner-border spinner-border-sm" role="status"></span>
+                        <i class="bi bi-door-open"></i> Entrada
+                    </button>
+                </form>
+                
+                <form id="inicioAlmocoForm" class="mx-1 mb-2">
+                    <input type="hidden" name="acao" value="inicio_almoco">
+                    <button type="submit" class="btn btn-ponto btn-warning text-white">
+                        <span class="loading-spinner spinner-border spinner-border-sm" role="status"></span>
+                        <i class="bi bi-egg-fried"></i> Início Almoço
+                    </button>
+                </form>
+                
+                <form id="fimAlmocoForm" class="mx-1 mb-2">
+                    <input type="hidden" name="acao" value="fim_almoco">
+                    <button type="submit" class="btn btn-ponto btn-warning text-white">
+                        <span class="loading-spinner spinner-border spinner-border-sm" role="status"></span>
+                        <i class="bi bi-egg"></i> Fim Almoço
+                    </button>
+                </form>
+                
+                <form id="saidaForm" class="mx-1 mb-2">
+                    <input type="hidden" name="acao" value="saida">
+                    <button type="submit" class="btn btn-ponto btn-danger">
+                        <span class="loading-spinner spinner-border spinner-border-sm" role="status"></span>
+                        <i class="bi bi-door-closed"></i> Saída
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<!-- Tabela de Registros -->
+<div class="card shadow-sm">
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-hover mb-0 text-center" style="font-size: 11px;">
+                <thead class="table-light">
+                    <tr>
+                        <th class="text-nowrap">Data</th>
+                        <th class="text-nowrap">Entrada</th>
+                        <th class="text-nowrap">Início Almoço</th>
+                        <th class="text-nowrap">Fim Almoço</th>
+                        <th class="text-nowrap">Saída</th>
+                    </tr>
+                </thead>
+                <tbody id="registrosBody">
+                    {% for registro in registros %}
+                    <tr>
+                        <td>{{ registro.data_criacao.strftime('%d/%m/%Y') }}</td>
+                        <td>{{ registro.entrada.strftime('%H:%M') if registro.entrada else '-' }}</td>
+                        <td>{{ registro.inicio_almoco.strftime('%H:%M') if registro.inicio_almoco else '-' }}</td>
+                        <td>{{ registro.fim_almoco.strftime('%H:%M') if registro.fim_almoco else '-' }}</td>
+                        <td>{{ registro.saida.strftime('%H:%M') if registro.saida else '-' }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Sucesso -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title">Sucesso</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Ponto registrado com sucesso!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-success" data-bs-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de Erro -->
+<div class="modal fade" id="errorModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title">Erro</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="errorModalBody">
+        Mensagem de erro aqui
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-danger" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Script AJAX -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Inicializa os modais
+        const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+        const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+        
+        // Carrega registros ao iniciar
+        atualizarRegistros();
+
+        // Configura os eventos dos formulários
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', async function(event) {
+                event.preventDefault();
+                const button = this.querySelector('button');
+                const spinner = button.querySelector('.loading-spinner');
+                
+                // Mostra o spinner e desabilita o botão
+                spinner.style.display = 'inline-block';
+                button.disabled = true;
+
+                try {
+                    const formData = new FormData(this);
+                    const response = await fetch('/registrar_ponto', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (data.status === 'success') {
+                        successModal.show();
+                        await atualizarRegistros();
+                    } else {
+                        document.getElementById('errorModalBody').textContent = data.message || 'Erro desconhecido';
+                        errorModal.show();
+                    }
+                } catch (error) {
+                    console.error('Erro:', error);
+                    document.getElementById('errorModalBody').textContent = 'Erro na conexão com o servidor';
+                    errorModal.show();
+                } finally {
+                    spinner.style.display = 'none';
+                    button.disabled = false;
+                }
+            });
+        });
+    });
+
+    async function atualizarRegistros() {
+        try {
+            const response = await fetch('/registrar_ponto', {
+                headers: { 'X-Requested-With': 'XMLHttpRequest' }
+            });
+            
+            const data = await response.json();
+            const tbody = document.getElementById('registrosBody');
+            
+            tbody.innerHTML = data.registros.map(registro => `
+                <tr>
+                    <td>${registro.data_criacao}</td>
+                    <td>${registro.entrada || '-'}</td>
+                    <td>${registro.inicio_almoco || '-'}</td>
+                    <td>${registro.fim_almoco || '-'}</td>
+                    <td>${registro.saida || '-'}</td>
+                </tr>
+            `).join('');
+            
+        } catch (error) {
+            console.error('Erro ao atualizar registros:', error);
+            document.getElementById('errorModalBody').textContent = 'Erro ao carregar registros';
+            new bootstrap.Modal(document.getElementById('errorModal')).show();
+        }
+    }
+</script>
+</body>
+</html>

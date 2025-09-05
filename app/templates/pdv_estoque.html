@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PDV</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/pdv_estoque.css">
+    <style>
+        /* Estilo para criar o espaÃƒÂ§o abaixo do navbar */
+        body {
+            padding-top: 20px;
+            /* Ajuste esse valor conforme a altura do seu navbar */
+        }
+
+        .navbar {
+            /* Certifique-se de que o navbar tenha uma posiÃƒÂ§ÃƒÂ£o fixa */
+            position: fixed;
+            /* Ou sticky, dependendo do seu design */
+            top: 0;
+            width: 100%;
+            z-index: 1030;
+            /* Garante que o navbar fique acima do conteÃƒÂºdo */
+        }
+    </style>
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+    <div class="container mt-3" style="margin-top: 6rem !important;">
+        <form id="submit-form" method="post" action="/submit" enctype="multipart/form-data">
+
+
+            <!-- Container 1 e 2 encapsulados dentro de um quadrado -->
+            <section class="container-quadrado mb-3">
+                <!-- Container 1 -->
+                <div class="container1">
+                    <div class="row justify-content-center">
+                        <div class="col-220 col-md-4">
+                            <div class="form-group">
+                                <label for="promotor" class="form-label">Promotor:</label>
+                                <input readonly type="text" name="promotor" id="promotor" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-220 col-md-4">
+                            <div class="form-group">
+                                <label for="cliente" class="form-label">Cliente:</label>
+                                <input readonly type="text" name="cliente" id="cliente" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-220 col-md-4">
+                            <div class="form-group">
+                                <label for="data_de_envio" class="form-label">Visita:</label>
+                                <input type="text" name="data_de_envio" id="data_de_envio" class="form-control"
+                                    readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ProdutoSelecionado" class="form-label">Produto selecionado:</label>
+                        <input type="text" name="ProdutoSelecionado" id="ProdutoSelecionado" class="form-control"
+                            readonly>
+                    </div>
+                </div>
+
+                <!-- Container 2 -->
+                <div class="container2 container2-dropdown mt-3">
+                    <div class="row justify-content-center">
+                        <div class="rede col-md-5">
+                            <div class="form-group">
+                                <label for="rede">Rede</label>
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="redeDropdown"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Selecione a rede
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="redeDropdown">
+                                        {% for loja in lojas %}
+                                        <li><a class="dropdown-item-rede" href="#" data-rede="{{ loja.rede }}">{{
+                                                loja.rede }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                    <input type="hidden" name="redes" id="redes">
+                                    <span class="error-tooltip" id="redeError"
+                                        style="display: none; color: red;">Selecione uma rede</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rede col-md-5">
+                            <div class="form-group">
+                                <label for="loja">Loja</label>
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="lojaDropdown"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Selecione a loja
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="lojaDropdown" id="lojasDropdown">
+                                    </ul>
+                                    <input type="hidden" name="loja" id="loja">
+                                    <span class="error-tooltip" id="lojaError"
+                                        style="display: none; color: red;">Selecione uma loja</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- Container 3 encapsulado dentro de um quadrado -->
+            <section class="container-quadrado mb-3">
+                <!-- Container 3 -->
+                <div class="container3">
+                    <div class="form-group">
+                        <label for="quantidade_pdv" class="form-label">Quantidade total de produtos em PDV:</label>
+                        <input type="number" name="quantidade_pdv" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantidade_estoque" class="form-label">Quantidade de caixas em Estoque:</label>
+                        <input type="number" name="quantidade_estoque" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="preco" class="form-label">Preço:</label>
+                        <input type="text" name="preco" id="preco" class="form-control" placeholder="R$0,00" required>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Container 4: Fotos (dinâmico, até 20 fotos) -->
+            <div class="fotos-grid" id="fotos-grid">
+                <!-- Item inicial para adicionar fotos -->
+                <div class="foto-item" onclick="adicionarNovaFoto()">
+                    <div class="foto-wrapper">
+                        <div class="foto-container">
+                            <div class="foto-placeholder">
+                                <i class="fas fa-camera"></i>
+                                <span>Adicionar foto</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal para escolher "Antes" ou "Depois" -->
+            <div class="modal fade" id="tipoFotoModal" tabindex="-1" aria-labelledby="tipoFotoModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="tipoFotoModalLabel">Escolha o tipo da foto</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Fechar"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <button type="button" class="btn btn-primary m-2" id="btnAntes">Antes</button>
+                            <button type="button" class="btn btn-success m-2" id="btnDepois">Depois</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Container 5: Datas -->
+            <div class="quadrado datas-section">
+                <section class="mb-3" id="datas-container">
+                    <div class="form-group">
+                        <label for="vencimento1" class="form-label">Datas de vencimento:</label>
+                        <input type="date" name="vencimento1" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="vencimento2" class="form-label"></label>
+                        <input type="date" name="vencimento2" class="form-control">
+                    </div>
+                    <button type="button" id="adicionar-data" class="btn btn-secondary mt-2 btn-sm mx-auto d-block"
+                        onclick="adicionarData()">Adicionar mais datas</button>
+                </section>
+            </div>
+
+            <!-- Campo oculto para armazenar o endereÃƒÂ§o obtido pela geolocalizaÃƒÂ§ÃƒÂ£o -->
+            <input type="hidden" name="local" id="local">
+            <input type="hidden" id="campoMensagem" name="campoMensagem" class="form-control" readonly>
+
+            <div class="centralizar">
+                <button id="enviarBotao" type="submit" class="btn btn-primary mt-2">Enviar</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="modal fade" id="modalSucesso" tabindex="-1" aria-labelledby="modalSucessoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="modalSucessoLabel">Sucesso!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    Os dados foram enviados com sucesso.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        // Passa as lojas do Django para o JavaScript
+        const lojas = [
+            {% for loja in lojas %}
+            { rede: "{{ loja.rede }}", loja: "{{ loja.loja }}" },
+            {% endfor %}
+        ];
+    
+        document.getElementById('submit-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+    
+            // Mostra o spinner de loading (você pode usar o que já tem ou ajustar conforme necessário)
+            const loading = document.getElementById('loading');
+            loading.classList.remove('d-none');
+            
+            const formData = new FormData(this);
+    
+            try {
+                const response = await fetch('/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+    
+                if (response.ok) {
+                    loading.classList.add('d-none');
+                    
+                    // Mostra o modal de sucesso que já existe no seu HTML
+                    const modalSucesso = new bootstrap.Modal(document.getElementById('modalSucesso'));
+                    modalSucesso.show();
+                    
+                    // Configura o redirecionamento quando o modal for fechado
+                    document.getElementById('modalSucesso').addEventListener('hidden.bs.modal', function () {
+                        window.location.href = '/redes';
+                    });
+                    
+                    // Ou se preferir redirecionar imediatamente ao clicar em OK:
+                    document.querySelector('#modalSucesso .btn-success').onclick = function() {
+                        window.location.href = '/redes';
+                    };
+                    
+                } else {
+                    loading.classList.add('d-none');
+                    alert('Ocorreu um erro ao enviar os dados.');
+                }
+            } catch (error) {
+                loading.classList.add('d-none');
+                alert('Erro de conexão ou servidor. Tente novamente.');
+                console.error(error);
+            }
+        });
+    </script>    
+    <script src="/static/js/pdv_estoque.js" data-username="{{ session['username'] }}"></script>
+    <script src="/static/js/local.js"></script>
+    <script src="/static/js/mensagem.js"></script>
+    <div id="loading" class="d-none">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <p>Enviando dados...</p>
+    </div>
+</body>
+
+</html>

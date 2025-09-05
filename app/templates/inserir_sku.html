@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserir SKU</title>
+</head>
+<body>
+    <h2>Inserir SKU</h2>
+    <form action="{{ url_for('inserir_sku') }}" method="post" enctype="multipart/form-data">
+        <label for="cliente_id">ID do Cliente:</label>
+        <input type="text" id="cliente_id" name="cliente_id" required><br><br>
+
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" name="descricao" required><br><br>
+
+        <label for="foto">Foto:</label>
+        <input type="file" id="foto" name="foto" accept="image/*" required><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <h2>Editar ou Excluir SKU</h2>
+    <ul>
+        {% for sku in skus %}
+            <li>
+                <img src="data:image/png;base64,{{ sku.foto }}" alt="{{ sku.descricao }}" width="100">
+                <p>{{ sku.descricao }}</p>
+                <form action="{{ url_for('editar_sku', id=sku.id) }}" method="post">
+                    <input type="submit" value="Editar">
+                </form>
+                <form action="{{ url_for('excluir_sku', id=sku.id) }}" method="post">
+                    <input type="submit" value="Excluir">
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

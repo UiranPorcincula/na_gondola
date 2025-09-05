@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lista de Notas Fiscais</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 60px;
+            font-size: 0.875rem; /* Fonte base menor */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais profissional */
+        }
+
+        .container {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 600; /* Semi-bold em vez de bold */
+            font-size: 1.5rem; /* Título menor */
+            color: #333; /* Cor mais sóbria */
+        }
+
+        /* Tabela com visual mais compacto */
+        .table {
+            font-size: 0.8125rem; /* Texto da tabela menor */
+        }
+        
+        .table th {
+            font-weight: 600;
+            font-size: 0.825rem;
+        }
+        
+        /* Botões menores e mais profissionais */
+        .btn {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+        
+        .btn-primary {
+            background-color: #0056b3; /* Azul mais sóbrio */
+            border-color: #0056b3;
+        }
+        
+        .btn-success {
+            background-color: #00864e; /* Verde mais sóbrio */
+            border-color: #00864e;
+        }
+        
+        /* Estilo atualizado para os botões do carrossel */
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 30px; /* Menor */
+            height: 30px; /* Menor */
+            background-color: rgba(0, 86, 179, 0.8); /* Azul semitransparente mais sóbrio */
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.8;
+            margin: 0 10px;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            width: 15px; /* Menor */
+            height: 15px; /* Menor */
+        }
+
+        /* Hover para destacar quando o usuário passar o mouse */
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            background-color: rgba(0, 86, 179, 1); /* Azul sólido mais sóbrio ao passar o mouse */
+            opacity: 1;
+        }
+
+        .carousel-item {
+            text-align: center;
+            padding: 15px;
+        }
+
+        .carousel-item iframe {
+            width: 100%;
+            height: 450px;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 3px; /* Espaço menor entre botões */
+        }
+        
+        /* Modal mais compacto */
+        .modal-header {
+            padding: 0.75rem 1rem;
+        }
+        
+        .modal-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .modal-body {
+            padding: 0.75rem;
+        }
+        
+        /* Tamanhos responsivos para telas menores */
+        @media (max-width: 768px) {
+            body {
+                font-size: 0.8125rem;
+            }
+            
+            h2 {
+                font-size: 1.3rem;
+            }
+            
+            .table {
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    {% include 'navbar.html' %}
+    <div class="container mt-3" style="margin-top: 4.5rem !important;">
+        <div class="container mt-3">
+            <h2>Notas Fiscais Enviadas</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Número da Nota</th>
+                            <th>Promotor</th>
+                            <th>Rede</th>
+                            <th>Loja</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for nota in notas %}
+                        <tr>
+                            <td>{{ nota.id }}</td>
+                            <td>{{ nota.numero_nota }}</td>
+                            <td>{{ nota.usuario }}</td>
+                            <td>{{ nota.rede }}</td>
+                            <td>{{ nota.loja }}</td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pdfModal{{ nota.id }}">Ver PDFs</button>
+                                    <button class="btn btn-success" onclick="baixarTodosPDFs({{ nota.id }}, this)">Baixar todos</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Modal para o Carrossel de PDFs -->
+                        <div class="modal fade" id="pdfModal{{ nota.id }}" tabindex="-1" aria-labelledby="pdfModalLabel{{ nota.id }}" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="pdfModalLabel{{ nota.id }}">PDFs da Nota {{ nota.numero_nota }}</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div id="carousel{{ nota.id }}" class="carousel slide" data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                                {% for i in range(1, 31) %}
+                                                    {% set pdf_attr = 'arquivo_pdf' + i|string %}
+                                                    {% if nota[pdf_attr] is not none %}
+                                                        <div class="carousel-item {% if loop.index == 1 %} active {% endif %}">
+                                                            <iframe src="{{ url_for('notas.ver_nota', nota_id=nota.id, pdf_index=i) }}" frameborder="0"></iframe>
+                                                        </div>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </div>
+                                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel{{ nota.id }}" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button" data-bs-target="#carousel{{ nota.id }}" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    
+    <script>
+        function baixarTodosPDFs(notaId, button) {
+            try {
+                // Mostrar indicador de carregamento
+                const originalText = button.textContent;
+                button.disabled = true;
+                button.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Baixando...';
+                
+                // Chamar a nova rota que decide automaticamente se baixa como PDF ou ZIP
+                fetch(`/baixar_todos/${notaId}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Falha ao baixar os arquivos');
+                        }
+                        return response.blob();
+                    })
+                    .then(blob => {
+                        // Criar URL para o blob
+                        const url = window.URL.createObjectURL(blob);
+                        
+                        // Determinar o tipo de arquivo para definir a extensão correta
+                        const fileExtension = blob.type === 'application/pdf' ? '.pdf' : '.zip';
+                        
+                        // Criar elemento <a> para o download
+                        const a = document.createElement('a');
+                        a.style.display = 'none';
+                        a.href = url;
+                        a.download = `nota_${notaId}${fileExtension}`;
+                        
+                        // Adicionar ao documento e clicar
+                        document.body.appendChild(a);
+                        a.click();
+                        
+                        // Limpar
+                        window.URL.revokeObjectURL(url);
+                        document.body.removeChild(a);
+                        
+                        // Restaurar botão
+                        button.disabled = false;
+                        button.textContent = originalText;
+                    })
+                    .catch(error => {
+                        console.error("Erro ao baixar arquivos:", error);
+                        alert("Ocorreu um erro ao tentar baixar os PDFs. Por favor, tente novamente.");
+                        button.disabled = false;
+                        button.textContent = originalText;
+                    });
+                
+            } catch (error) {
+                console.error("Erro:", error);
+                alert("Ocorreu um erro ao tentar baixar os PDFs. Por favor, tente novamente.");
+                button.disabled = false;
+                button.textContent = originalText;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulários</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;" class="mb-4">PDV e Estoque diário</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Promotor</th>
+                    <th>Loja</th>
+                    <th>Quantidade PDV</th>
+                    <th>Quantidade Estoque</th>
+                    <th>Vencimento 1</th>
+                    <th>Vencimento 2</th>
+                    <th>Foto Antes</th>
+                    <th>Foto Depois</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pdv in pdvs %}
+                <tr>
+                    <td>{{ pdv.promotor }}</td>
+                    <td>{{ pdv.loja }}</td>
+                    <td>{{ pdv.quantidade_pdv }}</td>
+                    <td>{{ pdv.quantidade_estoque }}</td>
+                    <td>{{ pdv.vencimento1 }}</td>
+                    <td>{{ pdv.vencimento2 }}</td>
+                    <td><img src="data:image/jpeg;base64,{{ pdv.antes }}" alt="Foto Antes" width="100"></td>
+                    <td><img src="data:image/jpeg;base64,{{ pdv.depois }}" alt="Foto Depois" width="100"></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

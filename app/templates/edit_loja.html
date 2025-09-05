@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Loja</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/edit_total_lojas.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="my-4">Editar Loja</h1>
+        <form action="{{ url_for('lojas.total_edit', id=loja.id) }}" method="post" class="form-container">
+            <div class="form-group">
+                <label for="promotor">Promotor:</label>
+                <input type="text" class="form-control" id="promotor" name="promotor" value="{{ loja.promotor }}" required>
+            </div>
+            <div class="form-group">
+                <label for="rede">Rede:</label>
+                <input type="text" class="form-control" id="rede" name="rede" value="{{ loja.rede }}" required>
+            </div>
+            <div class="form-group">
+                <label for="loja">Loja:</label>
+                <input type="text" class="form-control" id="loja" name="loja" value="{{ loja.loja }}" required>
+            </div>
+            <div class="form-group">
+                <label for="endereco">Endereço:</label>
+                <input type="text" class="form-control" id="endereco" name="endereco" value="{{ loja.endereco }}" required>
+            </div>
+            <div class="form-group">
+                <label for="cidade">Cidade:</label>
+                <input type="text" class="form-control" id="cidade" name="cidade" value="{{ loja.cidade }}" required>
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado:</label>
+                <input type="text" class="form-control" id="estado" name="estado" value="{{ loja.estado }}" required>
+            </div>
+            <div class="form-group">
+                <label for="dia_visita">Dia de Visita:</label>
+                <div id="dia_visita_buttons">
+                    <button type="button" class="btn btn-secondary" id="seg">Seg</button>
+                    <button type="button" class="btn btn-secondary" id="ter">Ter</button>
+                    <button type="button" class="btn btn-secondary" id="qua">Qua</button>
+                    <button type="button" class="btn btn-secondary" id="qui">Qui</button>
+                    <button type="button" class="btn btn-secondary" id="sex">Sex</button>
+                    <button type="button" class="btn btn-secondary" id="sab">Sab</button>
+                    <button type="button" class="btn btn-secondary" id="dom">Dom</button>
+                </div>
+                <input type="hidden" id="dia_visita" name="dia_visita" value="{{ loja.dia_visita }}">
+            </div>
+            <div class="form-group">
+                <label for="coordenada">Coordenada:</label>
+                <input type="text" class="form-control" id="coordenada" name="coordenada" value="{{ loja.coordenada }}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+    </div>
+    <script src="/static/js/edit_total_lojas.js"></script>
+</body>
+
+</html>

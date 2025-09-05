@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Lojas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/navbar.css">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container-fluid mt-3">
+        <div class="mb-3">
+        <h2>Lista de Lojas</h2>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Id</th>
+                        <th>Código Loja</th>
+                        <th>Nome Loja</th>
+                        <th>Cidade</th>
+                        <th>Endereço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for loja in lojas %}
+                    <tr onclick="window.location='/edit/{{ loja.id }}';" style="cursor: pointer;">
+                        <td>{{ loop.index }}</td>
+                        <td>{{ loja.id }}</td>
+                        <td>{{ loja.codigo_loja }}</td>
+                        <td>{{ loja.nome_loja }}</td>
+                        <td>{{ loja.cidade }}</td>
+                        <td>{{ loja.endereco }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <a href="/index" class="btn btn-primary">Voltar</a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

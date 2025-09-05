@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TESTE SKU</title>
+    <style>
+        /* ... (seu CSS permanece igual) ... */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            font-size: 10px;
+        }
+        h1 { text-align: center; color: #333; font-size: 2em; }
+        #skus-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0px;
+        }
+        .sku-item {
+            margin: 1px;
+            padding: 0px;
+            border: 1px solid #ccc;
+            border-radius: 0px;
+            background-color: #fff;
+            text-align: center;
+            width: 53%;
+            max-width: 70px;
+            cursor: pointer;
+        }
+        .sku-item img { width: 100%; height: auto; }
+        .sku-item p { margin-top: 10px; font-size: 1em; color: #666; }
+        #loading {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.5); color: #fff;
+            display: flex; justify-content: center; align-items: center; flex-direction: column;
+            z-index: 9999;
+        }
+        #loading .spinner-border {
+            width: 3rem; height: 3rem;
+            border-width: .3em; border-style: solid;
+            border-color: #fff transparent transparent transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        #loading p { margin-top: 1rem; }
+        @keyframes spin { 0% { transform: rotate(0deg);} 100% { transform: rotate(360deg);} }
+        @media screen and (max-width: 768px) { .sku-item { width: 40%; } }
+        @media screen and (max-width: 480px) {
+            .sku-item { width: 80%; }
+            h1 { font-size: 1.5em; }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loading">
+        <div class="spinner-border"></div>
+        <p>Carregando...</p>
+    </div>
+    <h1>Escolha o produto</h1>
+    <div id="skus-list"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            function buscarSKUs(clienteId) {
+                $('#loading').show(); // Mostra o loading
+
+                $.ajax({
+                    type: "POST",
+                    url: "/buscar_skus",
+                    data: { cliente_id: clienteId },
+                    dataType: "json",
+                    success: function (response) {
+                        $('#skus-list').empty();
+
+                        var imagensCarregadas = 0;
+                        var totalImagens = response.skus.length;
+
+                        function tryHideLoading() {
+                            if (imagensCarregadas >= totalImagens) {
+                                $('#loading').hide();
+                                clearTimeout(timeoutLoading); // Se timeout estiver ativo, cancela
+                            }
+                        }
+
+                        // Timeout de segurança para nunca travar o loading (ex: 10 segundos)
+                        var timeoutLoading = setTimeout(function(){
+                            $('#loading').hide();
+                        }, 10000);
+
+                        response.skus.forEach(function (sku) {
+                            var skuDiv = $('<div>').addClass('sku-item');
+                            var img = $('<img>').attr('src', 'data:image/png;base64,' + sku.foto).attr('alt', sku.descricao);
+
+                            // Tratar carregamento e erro
+                            img.on('load error', function () {
+                                imagensCarregadas++;
+                                tryHideLoading();
+                            });
+
+                            // Caso a imagem já esteja em cache e carregada
+                            if (img[0].complete) {
+                                imagensCarregadas++;
+                                tryHideLoading();
+                            }
+
+                            var descricaoParagrafo = $('<p>').text(sku.descricao);
+                            skuDiv.append(img).append(descricaoParagrafo);
+                            $('#skus-list').append(skuDiv);
+
+                            skuDiv.on('click', function () {
+                                localStorage.setItem('selectedSku', JSON.stringify({ sku: sku.sku, descricao: sku.descricao }));
+                                window.location.href = 'pdv_estoque';
+                            });
+                        });
+
+                        if (totalImagens === 0) {
+                            $('#loading').hide();
+                            clearTimeout(timeoutLoading);
+                        }
+                    },
+                    error: function (error) {
+                        console.error('Erro ao buscar os SKUs:', error);
+                        $('#loading').hide();
+                    }
+                });
+            }
+
+            var urlParams = new URLSearchParams(window.location.search);
+            var clienteId = urlParams.get('cliente_id');
+
+            if (clienteId) {
+                buscarSKUs(clienteId);
+            } else {
+                console.error('Nenhum cliente selecionado.');
+                $('#loading').hide();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total de Lojas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/total_lojas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Estilos adicionais para tornar a página responsiva */
+        .container {
+            width: 90%;
+            margin: auto;
+        }
+        .btn-selected {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-unselected {
+            background-color: #6c757d;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container mt-3" style="margin-top: 6rem !important;"></div>
+    <div class="container">
+        
+        <!-- Formulário para adicionar novos dados -->
+        <h2 class="my-4">Adicionar Nova Loja</h2>
+        <form action="{{ url_for('lojas.total_lojas') }}" method="post">
+            <div class="form-group">
+                <label for="promotor">Promotor:</label>
+                <input type="text" class="form-control" id="promotor" name="promotor" required>
+            </div>
+
+            <div class="form-group">
+                <label for="rede">Rede:</label>
+                <input type="text" class="form-control" id="rede" name="rede" required>
+            </div>
+
+            <div class="form-group">
+                <label for="loja">Loja:</label>
+                <input type="text" class="form-control" id="loja" name="loja" required>
+            </div>
+
+            <div class="form-group">
+                <label for="endereco">Endereço:</label>
+                <input type="text" class="form-control" id="endereco" name="endereco" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cidade">Cidade:</label>
+                <input type="text" class="form-control" id="cidade" name="cidade" required>
+            </div>
+
+            <div class="form-group">
+                <label for="estado">Estado:</label>
+                <input type="text" class="form-control" id="estado" name="estado" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dia_visita">Dia de Visita:</label>
+                <div id="dia_visita_buttons">
+                    <button type="button" class="btn btn-secondary btn-unselected" id="seg" onclick="toggleDiaVisita('seg')">Seg</button>
+                    <button type="button" class="btn btn-secondary btn-unselected" id="ter" onclick="toggleDiaVisita('ter')">Ter</button>
+                    <button type="button" class="btn btn-secondary btn-unselected" id="qua" onclick="toggleDiaVisita('qua')">Qua</button>
+                    <button type="button" class="btn btn-secondary btn-unselected" id="qui" onclick="toggleDiaVisita('qui')">Qui</button>
+                    <button type="button" class="btn btn-secondary btn-unselected" id="sex" onclick="toggleDiaVisita('sex')">Sex</button>
+                    <button type="button" class="btn btn-secondary btn-unselected" id="sab" onclick="toggleDiaVisita('sab')">Sab</button>
+                    <button type="button" class="btn btn-secondary btn-unselected" id="dom" onclick="toggleDiaVisita('dom')">Dom</button>
+                </div>
+                <input type="hidden" id="dia_visita" name="dia_visita" value="{% if loja is defined %}{{ loja.dia_visita }}{% endif %}">
+            </div>
+
+            <div class="form-group">
+                <label for="coordenada">Coordenada:</label>
+                <input type="text" class="form-control" id="coordenada" name="coordenada" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Adicionar</button>
+        </form>
+
+        <!-- Filtros -->
+        <h1 class="my-4">Total de Lojas</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="filtro_rede">Filtrar por Rede:</label>
+                <select id="filtro_rede" class="form-control" onchange="filtrarPorRede()">
+                    <option value="Todos">Todos</option>
+                    {% for rede in redes|sort %}
+                        <option value="{{ rede }}">{{ rede }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label for="filtro_promotor">Filtrar por Promotor:</label>
+                <select id="filtro_promotor" class="form-control" onchange="filtrarPorPromotor()">
+                    <option value="Todos">Todos</option>
+                    {% for promotor in promotores|sort %}
+                        <option value="{{ promotor }}">{{ promotor }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label for="filtro_cidade">Filtrar por Cidade:</label>
+                <select id="filtro_cidade" class="form-control" onchange="filtrarPorCidade()">
+                    <option value="Todos">Todos</option>
+                    {% for cidade in cidades|sort %}
+                        <option value="{{ cidade }}">{{ cidade }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <!-- Contador de Linhas -->
+        <div id="contador_linhas" class="my-4">Quantidade de Lojas: 0</div>
+
+        <!-- Tabela de Lojas -->
+        <table class="table table-striped" id="total_lojas_table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Promotor</th>
+                    <th>Rede</th>
+                    <th>Loja</th>
+                    <th>Endereço</th>
+                    <th>Cidade</th>
+                    <th>Estado</th>
+                    <th>Dia de Visita</th>
+                    <th>Coordenada</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for loja in total_lojas %}
+                <tr>
+                    <td>{{ loja.promotor }}</td>
+                    <td>{{ loja.rede }}</td>
+                    <td>{{ loja.loja }}</td>
+                    <td>{{ loja.endereco }}</td>
+                    <td>{{ loja.cidade }}</td>
+                    <td>{{ loja.estado }}</td>                    
+                    <td>
+                        {% if loja.dia_visita %}
+                            {% for dia in ['seg', 'ter', 'qua', 'qui', 'sex', 'sab', 'dom'] %}
+                                {% if dia in loja.dia_visita %}
+                                    <img src="../static/img/icones_semana/{{ dia }}.png" alt="{{ dia }}" style="width: 30px; height: 30px;">
+                                {% endif %}
+                            {% endfor %}
+                        {% else %}
+                            <!-- Adicione aqui algum comportamento para quando loja.dia_visita for None -->
+                        {% endif %}
+                    </td>                                     
+                    <td>{{ loja.coordenada }}</td>
+                    <td>
+                        <form action="{{ url_for('lojas.delete_loja', id=loja.id) }}" method="post" onsubmit="return confirmarExclusao();">
+                            <a href="{{ url_for('lojas.total_edit', id=loja.id) }}" class="btn btn-primary">Editar</a>
+                            <button type="submit" class="btn btn-danger">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <script src="/static/js/total_lojas.js"></script>
+</body>
+</html>
